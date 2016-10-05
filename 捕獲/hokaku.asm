@@ -59,12 +59,12 @@ sleep	;敵輸送隊判定
 	orr	r1, r0
 	lsl	r0, r1, #22
 	lsr	r0, r0, #31
-	bne	$08025412
+	bne	$08025412	;不可
 ;？？
 	ldr	r0, [r4, #12]
 	mov	r1, #48	;0x30 	救出もしくは被救出？
 	and	r0, r1
-	bne	$08025412
+	bne	$08025412	;不可
 ;終了
 	mov	r0, r5
 	mov	r1, r4

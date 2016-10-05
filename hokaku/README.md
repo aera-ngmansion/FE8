@@ -4,13 +4,12 @@
 救出した敵は、アイテムを奪うことが出来ます
 
 ## 使い方
-* 貼り付ける
+* 「face.gba」「hokaku.gba（お好きな方）」「Trade_Jouken.gba」「Trade.gba」を指定アドレスに貼り付ける
 
-* 「kaihoh.gba」と「HowtoExp.gba」は空き領域に飛ばす形式
+* 「kaihoh.gba」と「HowtoExp.gba」は空き領域に飛ばす形式なので、注意して適用する
 	* 空き領域への飛ばし方はasmファイルを見てチェックする
 
-* 残りの「face.gba」「hokaku.gba（１か２お好きな方）」「Trade_Jouken.gba」「Trade.gba」を指定アドレスに貼り付ける
-
+* 以下を書き換える
 	;;$00025224:08 D1 > C0 46　輸送隊交換可
 	
 	;;0002524e C0 > 40	;;交換は敵友軍不可 > 友軍のみ不可

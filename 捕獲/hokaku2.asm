@@ -13,7 +13,7 @@
 	bne	normal	;敵以外はジャンプ
 ;捕獲条件(力・魔力)
 	ldr	r0, [r2]
-	mov	r1, #0x13
+	mov	r1, #0x14
 	ldsb	r0, [r0, r1]	;キャラ力
 	asr	r0, r0, #1
 	ldrb	r1, [r4, #0x13]

@@ -3,7 +3,7 @@
 	ldr	r1, =$08032189
 	mov	r2, r14
 	cmp	r1, r2
-	bne	end	;;u~‚ë‚·vˆ—ir14‚Å”»’fjˆÈŠO‚ÍI—¹
+	bne	end	;;ã€Œé™ã‚ã™ã€å‡¦ç†ï¼ˆr14ã§åˆ¤æ–­ï¼‰ä»¥å¤–ã¯çµ‚äº†
 	ldrb	r1, [r4, #11]
 	mov	r2, #0x80
 	and	r1, r2
@@ -20,7 +20,7 @@ loop
 	ldrb	r0, [r0, #4]
 	cmp	r0, r1
 	bne	next
-;•Ò
+;ç·¨
 	ldrb	r0, [r5, #2]
 	cmp	r0, #0xFF
 	beq	nonscenario
@@ -28,7 +28,7 @@ loop
 	cmp	r0, r1
 	bne	next
 nonscenario
-;Í
+;ç« 
 	ldrb	r0, [r5, #3]	
 	cmp	r0, #0xFF
 	beq	flagon
@@ -39,7 +39,7 @@ next
 	add	r5, #12
 	b	loop
 flagon
-;‰ğ•úƒZƒŠƒtˆ—
+;è§£æ”¾ã‚»ãƒªãƒ•å‡¦ç†
 		ldrh	r0, [r5, #10]
 		cmp	r0, #0
 		bne	goword
@@ -51,7 +51,7 @@ goword
 		mov	r14, r1
 		@dcw	$F800
 flagcheck
-;‰ğ•úƒtƒ‰ƒOƒIƒ“ˆ—
+;è§£æ”¾ãƒ•ãƒ©ã‚°ã‚ªãƒ³å‡¦ç†
 		ldrh	r0, [r5, #8]
 		cmp	r0, #0
 		bne	goflag
@@ -63,7 +63,7 @@ goflag
 		mov	r14, r1
 		@dcw	$F800
 non
-;Á–Åˆ—
+;æ¶ˆæ»…å‡¦ç†
 	mov	r0, #0
 	str	r0, [r4]
 	strb	r0, [r4, #19]

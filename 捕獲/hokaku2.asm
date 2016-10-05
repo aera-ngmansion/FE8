@@ -14,11 +14,8 @@
 ;捕獲条件(力・魔力)
 	ldr	r0, [r2]
 	mov	r1, #0x13
-	ldsb	r0, [r0, r1]	;キャラ体格
-	ldr	r1, [r2, #4]
-	ldrb	r1, [r1, #0x11]	;クラス体格
-	add	r0, r0, r1
-	sub	r0, r1
+	ldsb	r0, [r0, r1]	;キャラ力
+	asr	r0, r0, #1
 	ldrb	r1, [r4, #0x13]
 	cmp	r0, r1
 	blt	$8025412

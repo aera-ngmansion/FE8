@@ -1,0 +1,398 @@
+00000000 6de8     	ldr	r0, [r5, #92]
+00000002 f000 f8a5	bl	$00000150
+00000006 e08b     	b	$00000120
+00000008 2800     	cmp	r0, #0
+0000000a d007     	beq	$0000001c
+0000000c 0040     	lsl	r0, r0, #1
+0000000e 1840     	add	r0, r0, r1
+00000010 7800     	ldrb	r0, [r0, #0]
+00000012 0000     	lsl	r0, r0, #0
+00000014 0040     	lsl	r0, r0, #1
+00000016 1c40     	add	r0, r0, #1
+00000018 0040     	lsl	r0, r0, #1
+0000001a e004     	b	$00000026
+0000001c 1840     	add	r0, r0, r1
+0000001e 7800     	ldrb	r0, [r0, #0]
+00000020 0000     	lsl	r0, r0, #0
+00000022 0080     	lsl	r0, r0, #2
+00000024 0000     	lsl	r0, r0, #0
+00000026 e013     	b	$00000050
+00000028 e14e 0203
+0000002c a5e8 0203
+00000030 0000
+00000032 2100     	mov	r1, #0
+00000034 e000     	b	$00000038
+00000036 4902     	ldr	r1, [pc, #8]	($00000040)
+00000038 60e9     	str	r1, [r5, #12]
+0000003a 4902     	ldr	r1, [pc, #8]	($00000044)
+0000003c 1c28     	mov	r0, r5		(add r0, r5, #0)
+0000003e 468f     	mov	pc, r1
+
+00000040 8841 08e4
+00000044 31f0 0805
+00000048 e150 0203
+0000004c a5e8 0203
+
+00000050 4904     	ldr	r1, [pc, #16]	($00000064)
+00000052 1840     	add	r0, r0, r1
+00000054 7801     	ldrb	r1, [r0, #0]
+00000056 2901     	cmp	r1, #1
+00000058 d1eb     	bne	$00000032
+0000005a 2100     	mov	r1, #0
+0000005c 7001     	strb	r1, [r0, #0]
+0000005e 0000
+00000060 e7e9     	b	$00000036
+00000062 0000
+00000064 ab20 0203
+00000068 0000
+0000006a 0000
+0000006c 0000
+0000006e 0000
+00000070 b5f0     	push	{r4, r5, r6, r7, lr}
+00000072 1c06     	mov	r6, r0		(add r6, r0, #0)
+00000074 8db0     	ldrh	r0, [r6, #44]
+00000076 3001     	add	r0, #1
+00000078 2700     	mov	r7, #0
+0000007a 85b0     	strh	r0, [r6, #44]
+0000007c 0400     	lsl	r0, r0, #16
+0000007e 1400     	asr	r0, r0, #16
+00000080 222e     	mov	r2, #46
+00000082 5eb1     	ldsh	r1, [r6, r2]
+00000084 280a     	cmp	r0, #10
+00000086 dd40     	ble	$0000010a
+00000088 4c18     	ldr	r4, [pc, #96]	($000000ec)
+0000008a 6df0     	ldr	r0, [r6, #92]
+0000008c f000 f860	bl	$00000150
+00000090 0040     	lsl	r0, r0, #1
+00000092 1900     	add	r0, r0, r4
+00000094 2100     	mov	r1, #0
+00000096 5e45     	ldsh	r5, [r0, r1]
+00000098 1c6c     	add	r4, r5, #1
+0000009a 0424     	lsl	r4, r4, #16
+0000009c 1424     	asr	r4, r4, #16
+0000009e 6df0     	ldr	r0, [r6, #92]
+000000a0 f000 f856	bl	$00000150
+000000a4 006d     	lsl	r5, r5, #1
+000000a6 182d     	add	r5, r5, r0
+000000a8 1c28     	mov	r0, r5		(add r0, r5, #0)
+000000aa f000 f859	bl	$00000160
+000000ae 0400     	lsl	r0, r0, #16
+000000b0 1400     	asr	r0, r0, #16
+000000b2 64f0     	str	r0, [r6, #76]
+000000b4 6df0     	ldr	r0, [r6, #92]
+000000b6 f000 f84b	bl	$00000150
+000000ba 0064     	lsl	r4, r4, #1
+000000bc 1824     	add	r4, r4, r0
+000000be 1c20     	mov	r0, r4		(add r0, r4, #0)
+000000c0 f000 f84e	bl	$00000160
+000000c4 0400     	lsl	r0, r0, #16
+000000c6 1400     	asr	r0, r0, #16
+000000c8 6530     	str	r0, [r6, #80]
+000000ca 85b7     	strh	r7, [r6, #44]
+000000cc 6cf1     	ldr	r1, [r6, #76]
+000000ce 85f1     	strh	r1, [r6, #46]
+000000d0 6577     	str	r7, [r6, #84]
+000000d2 65b7     	str	r7, [r6, #88]
+000000d4 4281     	cmp	r1, r0
+000000d6 d101     	bne	$000000dc
+000000d8 2001     	mov	r0, #1
+000000da 65b0     	str	r0, [r6, #88]
+000000dc 6cf1     	ldr	r1, [r6, #76]
+000000de 6d30     	ldr	r0, [r6, #80]
+000000e0 4281     	cmp	r1, r0
+000000e2 dd05     	ble	$000000f0
+000000e4 2001     	mov	r0, #1
+000000e6 4240     	neg	r0, r0
+000000e8 e003     	b	$000000f2
+000000ea 0000
+000000ec e14e 0203
+000000f0 2001     	mov	r0, #1
+000000f2 64b0     	str	r0, [r6, #72]
+000000f4 1c30     	mov	r0, r6		(add r0, r6, #0)
+000000f6 f000 f83b	bl	$00000170
+000000fa 6df0     	ldr	r0, [r6, #92]
+000000fc f000 f828	bl	$00000150
+00000100 4903     	ldr	r1, [pc, #12]	($00000110)
+00000102 0040     	lsl	r0, r0, #1
+00000104 1840     	add	r0, r0, r1
+00000106 2102     	mov	r1, #2
+00000108 8001     	strh	r1, [r0, #0]
+0000010a bcf0     	pop	{r4, r5, r6, r7}
+0000010c bc01     	pop	{r0}
+0000010e 4700     	bx	r0
+00000110 7780 0201
+
+00000114 ffff     	second half of BL instruction 0xffff
+00000116 ffff     	second half of BL instruction 0xffff
+00000118 ffff     	second half of BL instruction 0xffff
+0000011a ffff     	second half of BL instruction 0xffff
+0000011c ffff     	second half of BL instruction 0xffff
+0000011e ffff     	second half of BL instruction 0xffff
+00000120 2101     	mov	r1, #1
+00000122 1e40     	sub	r0, r0, #1
+00000124 4240     	neg	r0, r0
+00000126 4008     	and	r0, r1
+00000128 4900     	ldr	r1, [pc, #0]	($0000012c)
+0000012a e76d     	b	$00000008
+0000012c e14e     	b	$000003cc
+0000012e 0203     	lsl	r3, r0, #8
+00000130 ffff     	second half of BL instruction 0xffff
+00000132 ffff     	second half of BL instruction 0xffff
+00000134 ffff     	second half of BL instruction 0xffff
+00000136 ffff     	second half of BL instruction 0xffff
+00000138 ffff     	second half of BL instruction 0xffff
+0000013a ffff     	second half of BL instruction 0xffff
+0000013c ffff     	second half of BL instruction 0xffff
+0000013e ffff     	second half of BL instruction 0xffff
+00000140 ffff     	second half of BL instruction 0xffff
+00000142 ffff     	second half of BL instruction 0xffff
+00000144 ffff     	second half of BL instruction 0xffff
+00000146 ffff     	second half of BL instruction 0xffff
+00000148 ffff     	second half of BL instruction 0xffff
+0000014a ffff     	second half of BL instruction 0xffff
+0000014c ffff     	second half of BL instruction 0xffff
+0000014e ffff     	second half of BL instruction 0xffff
+00000150 4900     	ldr	r1, [pc, #0]	($00000154)
+00000152 468f     	mov	pc, r1
+00000154 af10 0805
+00000158 ffff     	second half of BL instruction 0xffff
+0000015a ffff     	second half of BL instruction 0xffff
+0000015c ffff     	second half of BL instruction 0xffff
+0000015e ffff     	second half of BL instruction 0xffff
+00000160 4900     	ldr	r1, [pc, #0]	($00000164)
+00000162 468f     	mov	pc, r1
+00000164 9890     	ldr	r0, [sp, #576]
+00000166 0805     	lsr	r5, r0, #0
+00000168 ffff     	second half of BL instruction 0xffff
+0000016a ffff     	second half of BL instruction 0xffff
+0000016c ffff     	second half of BL instruction 0xffff
+0000016e ffff     	second half of BL instruction 0xffff
+00000170 2100     	mov	r1, #0
+00000172 2029     	mov	r0, #41
+00000174 5431     	strb	r1, [r6, r0]
+00000176 4902     	ldr	r1, [pc, #8]	($00000180)
+00000178 60f1     	str	r1, [r6, #12]
+0000017a 4770     	bx	lr
+
+0000017c 0000     	lsl	r0, r0, #0
+0000017e 0000     	lsl	r0, r0, #0
+00000180 351d     	add	r5, #29
+00000182 0805     	lsr	r5, r0, #0
+00000184 ffff     	second half of BL instruction 0xffff
+00000186 ffff     	second half of BL instruction 0xffff
+00000188 ffff     	second half of BL instruction 0xffff
+0000018a ffff     	second half of BL instruction 0xffff
+0000018c ffff     	second half of BL instruction 0xffff
+0000018e ffff     	second half of BL instruction 0xffff
+00000190 ffff     	second half of BL instruction 0xffff
+00000192 ffff     	second half of BL instruction 0xffff
+00000194 ffff     	second half of BL instruction 0xffff
+00000196 ffff     	second half of BL instruction 0xffff
+00000198 ffff     	second half of BL instruction 0xffff
+0000019a ffff     	second half of BL instruction 0xffff
+0000019c ffff     	second half of BL instruction 0xffff
+0000019e ffff     	second half of BL instruction 0xffff
+000001a0 ffff     	second half of BL instruction 0xffff
+000001a2 ffff     	second half of BL instruction 0xffff
+000001a4 ffff     	second half of BL instruction 0xffff
+000001a6 ffff     	second half of BL instruction 0xffff
+000001a8 ffff     	second half of BL instruction 0xffff
+000001aa ffff     	second half of BL instruction 0xffff
+000001ac ffff     	second half of BL instruction 0xffff
+000001ae ffff     	second half of BL instruction 0xffff
+000001b0 be91     	undefined instruction 0xbe91
+000001b2 7a97     	ldrb	r7, [r2, #10]
+000001b4 7483     	strb	r3, [r0, #18]
+000001b6 8983     	ldrh	r3, [r0, #12]
+000001b8 4f83     	ldr	r7, [pc, #524]	($000003c8)
+000001ba 7465     	strb	r5, [r4, #17]
+000001bc ff63     	second half of BL instruction 0xff63
+000001be ffff     	second half of BL instruction 0xffff
+000001c0 4650     	mov	r0, sl
+000001c2 0040     	lsl	r0, r0, #1
+000001c4 3001     	add	r0, #1
+000001c6 0040     	lsl	r0, r0, #1
+000001c8 1980     	add	r0, r0, r6
+000001ca 8001     	strh	r1, [r0, #0]
+000001cc 4e05     	ldr	r6, [pc, #20]	($000001e4)
+000001ce 4648     	mov	r0, r9
+000001d0 0000     	lsl	r0, r0, #0
+000001d2 0080     	lsl	r0, r0, #2
+000001d4 0000     	lsl	r0, r0, #0
+000001d6 1980     	add	r0, r0, r6
+000001d8 2101     	mov	r1, #1
+000001da 8001     	strh	r1, [r0, #0]
+000001dc 4800     	ldr	r0, [pc, #0]	($000001e0)
+000001de 4687     	mov	pc, r0
+000001e0 95c6     	str	r5, [sp, #792]
+000001e2 0805     	lsr	r5, r0, #0
+000001e4 ab20     	add	r3, sp, #128
+000001e6 0203     	lsl	r3, r0, #8
+000001e8 ffff     	second half of BL instruction 0xffff
+000001ea ffff     	second half of BL instruction 0xffff
+000001ec ffff     	second half of BL instruction 0xffff
+000001ee f0ff 4648	bl	$000ffe82
+000001f2 0080     	lsl	r0, r0, #2
+000001f4 1980     	add	r0, r0, r6
+000001f6 8001     	strh	r1, [r0, #0]
+000001f8 4e06     	ldr	r6, [pc, #24]	($00000214)
+000001fa 4650     	mov	r0, sl
+000001fc 0000     	lsl	r0, r0, #0
+000001fe 0000     	lsl	r0, r0, #0
+00000200 0040     	lsl	r0, r0, #1
+00000202 3001     	add	r0, #1
+00000204 0040     	lsl	r0, r0, #1
+00000206 1980     	add	r0, r0, r6
+00000208 2101     	mov	r1, #1
+0000020a 8001     	strh	r1, [r0, #0]
+0000020c 4800     	ldr	r0, [pc, #0]	($00000210)
+0000020e 4687     	mov	pc, r0
+00000210 950c     	str	r5, [sp, #48]
+00000212 0805     	lsr	r5, r0, #0
+00000214 ab20     	add	r3, sp, #128
+00000216 0203     	lsl	r3, r0, #8
+00000218 ffff     	second half of BL instruction 0xffff
+0000021a ffff     	second half of BL instruction 0xffff
+0000021c ffff     	second half of BL instruction 0xffff
+0000021e ffff     	second half of BL instruction 0xffff
+00000220 7483     	strb	r3, [r0, #18]
+00000222 8983     	ldrh	r3, [r0, #12]
+00000224 4f83     	ldr	r7, [pc, #524]	($00000434)
+00000226 898f     	ldrh	r7, [r1, #12]
+00000228 fa8a     	second half of BL instruction 0xfa8a
+0000022a bb89     	undefined instruction 0xbb89
+0000022c ffff     	second half of BL instruction 0xffff
+0000022e ffff     	second half of BL instruction 0xffff
+00000230 2000     	mov	r0, #0
+00000232 4908     	ldr	r1, [pc, #32]	($00000254)
+00000234 6008     	str	r0, [r1, #0]
+00000236 3104     	add	r1, #4
+00000238 6008     	str	r0, [r1, #0]
+0000023a 3104     	add	r1, #4
+0000023c 6008     	str	r0, [r1, #0]
+0000023e 3104     	add	r1, #4
+00000240 6008     	str	r0, [r1, #0]
+00000242 3104     	add	r1, #4
+00000244 6008     	str	r0, [r1, #0]
+00000246 3104     	add	r1, #4
+00000248 6008     	str	r0, [r1, #0]
+0000024a 3104     	add	r1, #4
+0000024c 6008     	str	r0, [r1, #0]
+0000024e 3104     	add	r1, #4
+00000250 6008     	str	r0, [r1, #0]
+00000252 e00d     	b	$00000270
+00000254 ab20     	add	r3, sp, #128
+00000256 0203     	lsl	r3, r0, #8
+00000258 ffff     	second half of BL instruction 0xffff
+0000025a ffff     	second half of BL instruction 0xffff
+0000025c ffff     	second half of BL instruction 0xffff
+0000025e ffff     	second half of BL instruction 0xffff
+00000260 be91     	undefined instruction 0xbe91
+00000262 7a97     	ldrb	r7, [r2, #10]
+00000264 ad94     	add	r5, sp, #592
+00000266 ae93     	add	r6, sp, #588
+00000268 aa95     	add	r2, sp, #596
+0000026a f28a ffff	bl	$0028b26c
+0000026e ffff     	second half of BL instruction 0xffff
+00000270 4802     	ldr	r0, [pc, #8]	($0000027c)
+00000272 7900     	ldrb	r0, [r0, #4]
+00000274 2800     	cmp	r0, #0
+00000276 d01b     	beq	$000002b0
+00000278 e002     	b	$00000280
+0000027a 0000     	lsl	r0, r0, #0
+0000027c a4d0     	add	r4, pc, #832	(adr r4,$000005c0)
+0000027e 0203     	lsl	r3, r0, #8
+00000280 6868     	ldr	r0, [r5, #4]
+00000282 7900     	ldrb	r0, [r0, #4]
+00000284 2807     	cmp	r0, #7
+00000286 d028     	beq	$000002da
+00000288 2802     	cmp	r0, #2
+0000028a d026     	beq	$000002da
+0000028c 283f     	cmp	r0, #63
+0000028e d024     	beq	$000002da
+00000290 2800     	cmp	r0, #0
+00000292 d022     	beq	$000002da
+00000294 2800     	cmp	r0, #0
+00000296 d020     	beq	$000002da
+00000298 2800     	cmp	r0, #0
+0000029a d01e     	beq	$000002da
+0000029c 2800     	cmp	r0, #0
+0000029e d01c     	beq	$000002da
+000002a0 0000     	lsl	r0, r0, #0
+000002a2 0000     	lsl	r0, r0, #0
+000002a4 0000     	lsl	r0, r0, #0
+000002a6 0000     	lsl	r0, r0, #0
+000002a8 0000     	lsl	r0, r0, #0
+000002aa 0000     	lsl	r0, r0, #0
+000002ac 0000     	lsl	r0, r0, #0
+000002ae 0000     	lsl	r0, r0, #0
+000002b0 8838     	ldrh	r0, [r7, #0]
+000002b2 f000 f807	bl	$000002c4
+000002b6 2802     	cmp	r0, #2
+000002b8 d00a     	beq	$000002d0
+000002ba 4801     	ldr	r0, [pc, #4]	($000002c0)
+000002bc 4687     	mov	pc, r0
+000002be 0000     	lsl	r0, r0, #0
+000002c0 b6a2     	undefined instruction 0xb6a2
+000002c2 0802     	lsr	r2, r0, #0
+000002c4 4900     	ldr	r1, [pc, #0]	($000002c8)
+000002c6 468f     	mov	pc, r1
+000002c8 74cc     	strb	r4, [r1, #19]
+000002ca 0801     	lsr	r1, r0, #0
+000002cc ffff     	second half of BL instruction 0xffff
+000002ce ffff     	second half of BL instruction 0xffff
+000002d0 4800     	ldr	r0, [pc, #0]	($000002d4)
+000002d2 4687     	mov	pc, r0
+000002d4 b670     	undefined instruction 0xb670
+000002d6 0802     	lsr	r2, r0, #0
+000002d8 ffff     	second half of BL instruction 0xffff
+000002da 2015     	mov	r0, #21
+000002dc 5628     	ldsb	r0, [r5, r0]
+000002de 2100     	mov	r1, #0
+000002e0 f000 f826	bl	$00000330
+000002e4 0340     	lsl	r0, r0, #13
+000002e6 1340     	asr	r0, r0, #13
+000002e8 2801     	cmp	r0, #1
+000002ea d1e1     	bne	$000002b0
+000002ec 0000     	lsl	r0, r0, #0
+000002ee 6833     	ldr	r3, [r6, #0]
+000002f0 681a     	ldr	r2, [r3, #0]
+000002f2 0351     	lsl	r1, r2, #13
+000002f4 0b49     	lsr	r1, r1, #13
+000002f6 4806     	ldr	r0, [pc, #24]	($00000310)
+000002f8 4301     	orr	r1, r0
+000002fa 4806     	ldr	r0, [pc, #24]	($00000314)
+000002fc 4010     	and	r0, r2
+000002fe 4308     	orr	r0, r1
+00000300 6018     	str	r0, [r3, #0]
+00000302 0000     	lsl	r0, r0, #0
+00000304 e7e4     	b	$000002d0
+00000306 ffff     	second half of BL instruction 0xffff
+00000308 ffff     	second half of BL instruction 0xffff
+0000030a ffff     	second half of BL instruction 0xffff
+0000030c ffff     	second half of BL instruction 0xffff
+0000030e ffff     	second half of BL instruction 0xffff
+00000310 0000     	lsl	r0, r0, #0
+00000312 0001     	lsl	r1, r0, #0
+00000314 0000     	lsl	r0, r0, #0
+00000316 fff8     	second half of BL instruction 0xfff8
+00000318 ffff     	second half of BL instruction 0xffff
+0000031a ffff     	second half of BL instruction 0xffff
+0000031c ffff     	second half of BL instruction 0xffff
+0000031e ffff     	second half of BL instruction 0xffff
+00000320 ffff     	second half of BL instruction 0xffff
+00000322 ffff     	second half of BL instruction 0xffff
+00000324 ffff     	second half of BL instruction 0xffff
+00000326 ffff     	second half of BL instruction 0xffff
+00000328 ffff     	second half of BL instruction 0xffff
+0000032a ffff     	second half of BL instruction 0xffff
+0000032c ffff     	second half of BL instruction 0xffff
+0000032e ffff     	second half of BL instruction 0xffff
+00000330 4a00     	ldr	r2, [pc, #0]	($00000334)
+00000332 4697     	mov	pc, r2
+00000334 a490     	add	r4, pc, #576	(adr r4,$00000578)
+00000336 0802     	lsr	r2, r0, #0
+00000338 ffff     	second half of BL instruction 0xffff
+0000033a ffff     	second half of BL instruction 0xffff
+0000033c ffff     	second half of BL instruction 0xffff
+0000033e ffff     	second half of BL instruction 0xffff

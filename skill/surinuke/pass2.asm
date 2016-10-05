@@ -8,10 +8,10 @@
 	mov	pc, r0
 check
 	mov	r0, r13
-	ldr	r1, =$03007D18	;“¹‹ïÁ–ÅƒoƒO
+	ldr	r1, =$03007D18	;é“å…·æ¶ˆæ»…ãƒã‚°
 	cmp	r0, r1
 	beq	non
-;ƒ†ƒjƒbƒg
+;ãƒ¦ãƒ‹ãƒƒãƒˆ
 	ldr	r0, [r4]
 	ldrh	r0, [r0, #0x26]
 	lsl	r0, r0, #20
@@ -19,13 +19,13 @@ check
 class
 	ldr	r0, [r4, #4]
 	ldrb	r0, [r0, #4]
-	cmp	r0, #0x17			;ƒNƒ‰ƒX
+	cmp	r0, #0x17			;ã‚¯ãƒ©ã‚¹
 	beq	pass
-	cmp	r0, #0x18			;ƒNƒ‰ƒX
+	cmp	r0, #0x18			;ã‚¯ãƒ©ã‚¹
 	beq	pass
-	cmp	r0, #0x00			;ƒNƒ‰ƒX
+	cmp	r0, #0x00			;ã‚¯ãƒ©ã‚¹
 	beq	pass
-	cmp	r0, #0x00			;ƒNƒ‰ƒX
+	cmp	r0, #0x00			;ã‚¯ãƒ©ã‚¹
 	beq	pass
 non
 	mov	r0, #1

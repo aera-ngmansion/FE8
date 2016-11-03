@@ -6,7 +6,7 @@
 	ldr	r0, =$0203a4e8
 	ldr	r1, =$03004df0
 	ldr	r1, [r1]
-dr	r2, =$0802a4f0
+ldr	r2, =$0802a4f0
 mov	r14, r2
 @dcw	$F800
 	mov	r0, r6
@@ -22,6 +22,8 @@ non
 	pop	{r4, r5, r6}
 	pop	{r1}
 	bx	r1
+	
+@dcd	$00000000
 	
 effect
 	push	{lr}

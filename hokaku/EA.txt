@@ -1,0 +1,35 @@
+#define FreeSpace 0x1000000
+
+//0x46874800
+//0x468F4900
+//0x46974A00
+//0x469F4B00
+
+ORG		0x180cc
+WORD	0x468F4900
+POIN	hack1
+
+ORG		0x22f04
+	#incbin "Trade_Jouken.gba"
+
+ORG		0x251d2
+	#incbin "Trade.gba"
+
+ORG		0x2524e
+	BYTE	$40
+
+ORG		0x252f4
+	#incbin "hokaku.gba"
+	
+ORG		0x2d724
+	#incbin "face.gba"
+
+ORG		0x321B0
+WORD	0x468F4900
+POIN	hack2
+
+ORG FreeSpace
+hack1:
+	#incbin "kaihoh.gba"
+hack2:
+	#incbin "HowtoExp.gba"

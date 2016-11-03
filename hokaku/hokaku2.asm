@@ -49,7 +49,7 @@ sleep	;;輸送隊判定
 	mov	r1, #48	;0x30
 	and	r0, r1
 	bne	$08025412
-	mov	r0, r5
+	mov	r0, r2
 	mov	r1, r4
 	b	$0802551c
 	

@@ -27,5 +27,7 @@ POIN	hack2
 ORG FreeSpace
 hack1:
 	#incbin "kaihoh.gba"
+
+ALIGN	0x4
 hack2:
 	#incbin "HowtoExp.gba"

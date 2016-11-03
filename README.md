@@ -29,7 +29,7 @@ FWDS2の作戦会議室風なものを作れます
 ##Stirlingで空き領域アドレスをチェック
 ![Demo](http://i.imgur.com/pw8gSRk.png)
 
-##EA.txtを開き空き領域(FreeSpace)を指定
+##EA.txtを開きFreeSpaceを指定
 ![Demo](http://i.imgur.com/Brmf1pb.png)
 ![Demo](http://i.imgur.com/uxbjmky.png)
 

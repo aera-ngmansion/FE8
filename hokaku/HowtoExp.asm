@@ -23,7 +23,7 @@ non
 	pop	{r1}
 	bx	r1
 	
-@dcd	$00000000
+@ltorg
 	
 effect
 	push	{lr}

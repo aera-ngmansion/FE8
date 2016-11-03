@@ -20,3 +20,20 @@ FWDS2の作戦会議室風なものを作れます
 
 ### ソート修正/SortFix
 「部隊」でレベル順にソートした際の機能を修正
+
+
+
+
+# EventAssemblerパッチングシステムの使い方
+
+##Stirlingで空き領域アドレスをチェック
+![Demo](http://i.imgur.com/pw8gSRk.png)
+
+##空き領域(FreeSpace)を指定する
+![Demo](http://i.imgur.com/Brmf1pb.png)
+![Demo](http://i.imgur.com/uxbjmky.png)
+
+##パッチを当てる
+![Demo](http://i.imgur.com/SuT7Vsp.png)
+
+上に"EA.txt"下に"改造したいロム"をいれ、「Assemble」で終了。

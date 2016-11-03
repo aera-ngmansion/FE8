@@ -24,7 +24,7 @@ FWDS2の作戦会議室風なものを作れます
 
 
 
-# EventAssemblerパッチングシステムの使い方
+# EventAssemblerの使い方
 
 ##Stirlingで空き領域アドレスをチェック
 ![Demo](http://i.imgur.com/pw8gSRk.png)

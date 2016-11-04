@@ -25,6 +25,7 @@ FWDS2の作戦会議室風なものを作れます
 
 
 # EventAssemblerの使い方
+[here](http://feuniverse.us/t/event-assembler/1749)
 
 ##Stirlingで空き領域アドレスをチェック
 ![Demo](http://i.imgur.com/pw8gSRk.png)

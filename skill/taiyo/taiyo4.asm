@@ -12,13 +12,19 @@
 	str	r0, [r1, #24]
 	str	r0, [r1, #28]
 ;太陽発動分岐
-	ldr	r0, =0203A4D0
+	ldr	r0, =$0203A4D0
 	ldrb	r0, [r0, #4]
 	cmp	r0, #0
 	beq	buki
 	ldr	r0, [r5, #4]
 	ldrb	r0, [r0, #4]
-	cmp	r0, #7		;太陽クラス
+	cmp	r0, #$07		;太陽クラス
+	beq	taiyo
+	cmp	r0, #$00		;太陽クラス
+	beq	taiyo
+	cmp	r0, #$00		;太陽クラス
+	beq	taiyo
+	cmp	r0, #$00		;太陽クラス
 	beq	taiyo
 buki
 	ldrh	r0, [r7, #0]
@@ -31,7 +37,7 @@ hazure
 	ldr	r0, =$0802b6a2
 	mov	pc, r0
 taiyo
-	mov	r0, #21
+	mov	r0, #21		;技(発動率)
 	ldsb	r0, [r5, r0]
 	mov	r1, #0
 ldr	r2,	=$0802a490

@@ -1,0 +1,24 @@
+#define FreeSpace 0x1000000
+
+//0x46874800
+//0x468F4900
+//0x46974A00
+//0x469F4B00
+
+
+ORG		0x951a8
+WORD	0x46874800
+POIN	SortUnitsByLvFix
+
+ORG		0x9522e
+BYTE	$C0 $46
+WORD	0x46874800
+POIN	SortUnitsByLvFix2
+
+ORG		FreeSpace
+ALIGN	$04
+SortUnitsByLvFix:
+	#incbin "SortUnitsByLvFix.gba"
+ALIGN	$04
+SortUnitsByLvFix2:
+	#incbin "SortUnitsByLvFix2.gba"

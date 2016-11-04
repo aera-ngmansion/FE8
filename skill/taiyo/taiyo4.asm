@@ -11,11 +11,11 @@
 	str	r0, [r1, #20]
 	str	r0, [r1, #24]
 	str	r0, [r1, #28]
-;太陽発動分岐
 	ldr	r0, =$0203A4D0
 	ldrb	r0, [r0, #4]
 	cmp	r0, #0
 	beq	buki
+;太陽発動分岐
 	ldr	r0, [r5, #4]
 	ldrb	r0, [r0, #4]
 	cmp	r0, #$07		;太陽クラス

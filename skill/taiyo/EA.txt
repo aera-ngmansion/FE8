@@ -1,4 +1,4 @@
-#define FreeSpace 0x1000000
+#define FreeSpace 0xE487D0
 
 //0x46874800
 //0x468F4900

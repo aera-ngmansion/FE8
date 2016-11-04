@@ -4,7 +4,7 @@
 	lsl	r0, r0, #2
 	add	r0, r0, r6
 	strh	r1, [r0]
-	ldr	r6, =$0203AB20	;勝手なリザイア
+	ldr	r6, =$0203AB20	;(勝手な太陽フラグ)
 	mov	r0, r10
 ;	
 ;

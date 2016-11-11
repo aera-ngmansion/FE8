@@ -1,4 +1,4 @@
-#define FreeSpace 0x1000000
+#define Free_Space 0x1000000
 
 
 ORG		0x180cc
@@ -24,7 +24,7 @@ ORG		0x321B0
 WORD	0x468F4900
 POIN	hack2
 
-ORG FreeSpace
+ORG Free_Space
 hack1:
 	#incbin "kaihoh.gba"
 

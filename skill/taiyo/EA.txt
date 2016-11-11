@@ -1,4 +1,4 @@
-#define FreeSpace 0xE487D0
+#define Free_Space 0xE487D0
 
 //0x46874800
 //0x468F4900
@@ -36,7 +36,7 @@ ORG		0x5948e
 
 //
 
-ORG FreeSpace
+ORG Free_Space
 ALIGN	0x4
 taiyo1:
 	#incbin "taiyo1.gba"

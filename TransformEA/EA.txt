@@ -1,5 +1,7 @@
 #define Free_Space 0x1000000
 
+//0x668バイト+リスト分の容量を使用
+
 //WORD	$46874800
 //WORD	$468F4900
 //WORD	$46974A00
@@ -7,96 +9,98 @@
 
 ORG		0x72EA8
 WORD	$46874800
-WORD	$08E47A50	//
+POIN	TransRefProgram+$1D0
 WORD	$1C280000
 
 //
 
 ORG		0x72EC0
 WORD	$46874800
-WORD	$08E47AB0	//
+POIN	TransRefProgram+$230
 
 //
 
 ORG		0x72F28
 SHORT	$480A $3060 $4687
 ORG		0x72F54
-WORD	$08E47D00	//+$60
+POIN	TransRefProgram+$480
 
 ORG		0x72F32
 SHORT	$4808 $30C0 $4687
 ORG		0x72F54
-WORD	$08E47D00	//+$C0
+POIN	TransRefProgram+$480
 
 //
 
 ORG		0x72F42
 SHORT	$4901 $468F $0
-WORD	$08E47C90	//
+POIN	TransRefProgram+$410
 
 //
 
 ORG		0x72F4C
 SHORT	$F000 $FF92
 WORD	$46874800
-WORD	$08E47D00	//+$00
+POIN	TransRefProgram+$480
 
 ORG		0x72F5E
 SHORT	$4804 $4687
 ORG		0x72F6E
 SHORT	$E00E
-WORD	$08E47B10	//
+POIN	TransRefProgram+$290
 
-//
-ORG		0x7301A
+/////
+
+
+ORG		0x7301A		//竜化前サウンド
 SHORT	$485F $4687
 ORG		0x73198
-WORD	$08E47E10	//+$00
+POIN	TransRefProgram+$590
 
-ORG		0x73022
+ORG		0x73022		//竜化前サウンド二回目
 SHORT	$485D $3060 $4687
 ORG		0x73198
-WORD	$08E47E10	//+$60
+POIN	TransRefProgram+$590
 	
-ORG		0x7302E
+ORG		0x7302E		//竜化前アニメ
 SHORT	$4907 $468F
 ORG		0x7304C
-WORD	$08E47B70	//
+POIN	TransRefProgram+$2F0
 
-ORG		0x73044
+ORG		0x73044		//竜化中アニメ
 WORD	$468F4900
-WORD	$08E47BD0	//
+POIN	TransRefProgram+$350
 	
-//
+////////
 
-ORG		0x7309E
+ORG		0x7309E		//竜化解除
 SHORT	$4909 $468F
 ORG		0x730C4
-WORD	$08E47C30	//
+POIN	TransRefProgram+$3B0
 
 ORG		0x730B8
 BYTE	$09
 
-//StrClsAndWep
+//////
 
 ORG		0x7311C
-WORD	$468F4900 $08E477FC 0
-
-//
+WORD	$468F4900
+POIN	StrClsAndWe	//StrClsAndWep
+WORD	0
 
 ORG		0x73176
-BYTE	$4808
-BYTE	$4687
-BYTE	$460B
+SHORT	$4804
+SHORT	$4687
+SHORT	$480B
 ORG		0x73188
-WORD	$08E47990	//
-BYTE	$4806
+POIN	TransRefProgram+$110
+SHORT	$4806
 
 //
 
 ORG		0x731B8
 WORD	0x46874800
-WORD	$08E479D0	//
+POIN	TransRefProgram+$150
 
 //
 
@@ -104,47 +108,13 @@ ORG		0x731F6
 SHORT	$4804 $4687
 BYTE	$0A
 ORG		0x73208
-WORD	0x08E47A10	//
+POIN	TransRefProgram+$190
 
 //
 //
 //
 
 
-
-ORG		0x00000000
-WORD	0x46874800
-POIN	hack1
-
-//
-//
-//
-
-
-ORG		Free_Space
-
-
-
-ALIGN	4
-StrClsAndWe:		//E477FC
-	#incbin "hack1.gba"
-	
-ALIGN	4
-TransRefProgram:	//E47880
-	#incbin "TransRefProgram.bin"
-
-ALIGN	4
-TransFormList:
-WORD $4	//総数
-WORD 0 0 0
-BYTE $3C $AA $C5 $C4 $C6 $C7 $00 $DD $DF $DE 0 0 0 0 0 0
-BYTE $02 $09 $CE $B1 $CE $09 $00 $F0 $00 $F0 0 0 0 0 0 0
-BYTE $3F $FF $CE $23 $CE $19 $00 $F0 $00 $F0 0 0 0 0 0 0
-	
-ORG	TransRefProgram+$58
-POIN	TransFormList
-	
-	
 //E47D7E:06
 //E47DDE:06
 
@@ -153,3 +123,35 @@ POIN	TransFormList
 	
 //E47E2E:08
 //E47E8E:08
+
+
+ORG		Free_Space
+
+ALIGN	4
+TransRefProgram:	//E47880
+	#incbin "TransRefProgram.bin"
+
+ALIGN	4
+StrClsAndWe:		//E477FC
+	#incbin "StrClsAndWe.gba"
+POIN	Free_Space+$80
+	
+
+ALIGN	4
+TransFormList:
+WORD $3	//総数
+WORD 0 0 0
+
+BYTE $3C $AA $C5 $C4 $C6 $C7 $00 $00
+SHORT $DC $DE $DD 0
+
+BYTE $02 $09 $C5 $B1 $C5 $09 $00 $00
+SHORT $EF $FFFF $EF 0
+
+BYTE $3F $FF $C5 $23 $C5 $19 $00 $00
+SHORT $EF $FFFF $EF 0
+	
+ORG	Free_Space+$58
+POIN	TransFormList
+	
+	

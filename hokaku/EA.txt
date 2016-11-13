@@ -1,5 +1,7 @@
-#define Free_Space 0x1000000
+ORG	0x1000000
 
+
+PUSH
 
 ORG		0x180cc
 WORD	0x468F4900
@@ -24,10 +26,14 @@ ORG		0x321B0
 WORD	0x468F4900
 POIN	hack2
 
-ORG Free_Space
+POP
+
+ALIGN	4
 hack1:
 	#incbin "kaihoh.gba"
 
-ALIGN	0x4
+ALIGN	4
 hack2:
 	#incbin "HowtoExp.gba"
+	
+  MESSAGE Used free space ends at currentOffset

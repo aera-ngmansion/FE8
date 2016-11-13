@@ -1,0 +1,13 @@
+//TransformList
+
+WORD $1	//総数
+WORD 0 0 0
+
+//ミルラ
+
+BYTE $3C $AA $C5 $C4 $C6 $C7 0 0
+SHORT $DC $DE $DD 0
+
+
+//リスト終了
+SHORT $FFFF

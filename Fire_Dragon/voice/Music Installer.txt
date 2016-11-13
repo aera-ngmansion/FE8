@@ -1,0 +1,16 @@
+
+PUSH
+
+ORG	$5734F4
+	#incbin	"0x0573503.bin"
+	
+ORG	$573680
+
+POIN	voice
+WORD	$085734F4
+
+POP
+
+voice:
+	#incbin	"0x05734F4.bin"
+	

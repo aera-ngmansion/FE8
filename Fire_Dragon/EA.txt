@@ -1,0 +1,14 @@
+ORG 0x1000000
+
+//WORD	$46874800
+//WORD	$468F4900
+//WORD	$46974A00
+//WORD	$469F4B00
+
+MESSAGE Used free space starts at CURRENTOFFSET
+	
+	#include "anime/Master Animation Installer.txt"
+	#include "voice/Music Installer.txt"
+	#include "Transform/EA.txt"
+
+  MESSAGE Used free space ends at currentOffset

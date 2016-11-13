@@ -1,0 +1,15 @@
+
+    #define ClassAnimTable (0xc00008-0x20)
+
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+#include "animationpatchesJP.event"
+
+//////////////Installed animations go here:
+
+#include "Dragon Installer.event"
+#include "StanD Installer.event"
+#include "Return Installer.event"
+
+//////////////
+  

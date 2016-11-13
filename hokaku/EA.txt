@@ -1,5 +1,7 @@
 ORG	0x1000000
 
+//
+MESSAGE Used free space starts at CURRENTOFFSET
 
 PUSH
 

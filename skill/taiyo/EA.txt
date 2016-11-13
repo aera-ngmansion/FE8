@@ -1,9 +1,11 @@
-#define Free_Space 0xE487D0
+ORG 0xE487D0
 
 //0x46874800
 //0x468F4900
 //0x46974A00
 //0x469F4B00
+
+PUSH
 
 ORG		0x2B666
 	BYTE	$C0 $46
@@ -35,22 +37,24 @@ ORG		0x5948e
 	BYTE	$80
 
 //
+POP
 
-ORG Free_Space
-ALIGN	0x4
+ALIGN	4
 taiyo1:
 	#incbin "taiyo1.gba"
 POIN	taiyo11+1
 
-ALIGN	0x4
+ALIGN	4
 taiyo11:
 	#incbin "taiyo11.gba"
-ALIGN	0x4
+ALIGN	4
 taiyo2:
 	#incbin "taiyo2.gba"
-ALIGN	0x4
+ALIGN	4
 taiyo3:
 	#incbin "taiyo3.gba"
-ALIGN	0x4
+ALIGN	4
 taiyo4:
 	#incbin "taiyo4.gba"
+	
+  MESSAGE Used free space ends at currentOffset

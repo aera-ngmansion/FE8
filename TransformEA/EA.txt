@@ -19,4 +19,4 @@ SHORT $DC $DE $DD 0
 
 //リスト終了
 SHORT $FFFF
-  MESSAGE Used free space ends at currentOffset
+  MESSAGE Used free space ends at CURRENTOFFSET

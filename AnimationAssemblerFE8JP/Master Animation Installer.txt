@@ -1,7 +1,7 @@
 ORG 0x1000000
 
 
-MESSAGE Used free space starts at CURRENTOFFSET
+  MESSAGE Used free space starts at CURRENTOFFSET
 
     #define ClassAnimTable (0xc00008-0x20)
 
@@ -17,4 +17,4 @@ MESSAGE Used free space starts at CURRENTOFFSET
 
 //////////////
   
-  MESSAGE Used free space ends at currentOffset
+  MESSAGE Used free space ends at CURRENTOFFSET

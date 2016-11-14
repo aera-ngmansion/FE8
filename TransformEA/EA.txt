@@ -3,10 +3,11 @@ ORG	0x1000000
 //0x668バイト+リスト分の容量を使用
 
 MESSAGE Used free space starts at CURRENTOFFSET
+#include "part/Transform.event"
 
-	#include "Transform.event"
 
 //TransformList
+
 WORD $1	//総数
 WORD 0 0 0
 
@@ -14,7 +15,8 @@ WORD 0 0 0
 BYTE $3C $AA $C5 $C4 $C6 $C7 0 0
 SHORT $DC $DE $DD 0
 
+
+
 //リスト終了
 SHORT $FFFF
-
   MESSAGE Used free space ends at currentOffset

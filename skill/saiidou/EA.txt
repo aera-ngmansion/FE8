@@ -1,0 +1,27 @@
+ORG 0x1000000
+
+
+//WORD	$46874800
+//WORD	$468F4900
+//WORD	$46974A00
+//WORD	$469F4B00
+  MESSAGE Used free space starts at CURRENTOFFSET
+
+////
+PUSH
+
+ORG		0x1CED4
+WORD	0x46874800
+POIN	hack1
+
+POP
+////
+
+ALIGN	4
+hack1:
+	#incbin "jinrai.gba"
+	
+	
+	
+	
+  MESSAGE Used free space ends at CURRENTOFFSET

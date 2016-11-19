@@ -2,7 +2,6 @@ ORG	0x1000000
 
 //0x668バイト+リスト分の容量を使用
 
-MESSAGE Used free space starts at CURRENTOFFSET
 #include "part/Transform.event"
 
 

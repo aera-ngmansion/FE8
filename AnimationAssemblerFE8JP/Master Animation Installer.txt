@@ -1,13 +1,10 @@
 ORG 0x1000000
 
-
-  MESSAGE Used free space starts at CURRENTOFFSET
-
     #define ClassAnimTable (0xc00008-0x20)
 
 
 #define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
-#include "animationpatchesJP.event"
+#include "Extensions/animationpatchesJP.event"
 
 //////////////Installed animations go here:
 
@@ -16,5 +13,5 @@ ORG 0x1000000
 
 
 //////////////
-  
-  MESSAGE Used free space ends at CURRENTOFFSET
+
+MESSAGE Used free space ends at currentOffset

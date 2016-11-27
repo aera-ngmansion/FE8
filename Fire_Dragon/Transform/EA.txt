@@ -14,7 +14,7 @@ SHORT $DC $DE $DD 0
 
 //火竜
 
-BYTE $3D $AA $CB $CA $CC $CA 0 0
+BYTE $3D $AA $FE $FD $FF $FD 0 0
 SHORT $2F1 $FFFF $FFFF 0
 
 

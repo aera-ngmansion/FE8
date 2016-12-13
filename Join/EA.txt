@@ -1,11 +1,6 @@
-ORG 0x1000000
+ORG 0x
 
 
-//WORD	$46874800
-//WORD	$468F4900
-//WORD	$46974A00
-//WORD	$469F4B00
-  MESSAGE Used free space starts at CURRENTOFFSET
 PUSH
 ////0x478バイト使用
 
@@ -47,45 +42,47 @@ POP
 
 ///
 	
-ALIGN	4
+
 Join:
 	#incbin "first/Join_first.gba"
+ALIGN	4
 Join2:
 	#incbin "first/Join_bl.gba"
 POIN	Join3+1
+ALIGN	4
 Join3:
 	#incbin "first/Join_terms.gba"
+	ALIGN	4
 
 ///
 
-ALIGN	4
 Join4:
 	#incbin "second/Join_second.gba"
 POIN	Join5
 POIN	List
-
+ALIGN	4
 
 Join5:
 	#incbin "first/Join_bl.gba"
 POIN	Join6+1
+ALIGN	4
 Join6:
 	#incbin "second/Join_terms2.gba"
-
 ALIGN	4
+
 List:
 POIN	Join8+1
 WORD	0 0
 POIN	Join9+1
 	#incbin "second/data.bin"
-	
+ALIGN	4
 Join8:
 	#incbin "second/Join_final.gba"
-
+ALIGN	4
 Join9:
 	#incbin "second/Join_last.gba"
-
 ALIGN	4
+
 Pair:
 	#incbin "Pair_up/Pair.gba"
-	
-  MESSAGE Used free space ends at CURRENTOFFSET
+ALIGN	4

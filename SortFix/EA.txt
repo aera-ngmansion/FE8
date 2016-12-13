@@ -1,11 +1,5 @@
-ORG 0x1000000
+ORG 0x
 
-//0x46874800
-//0x468F4900
-//0x46974A00
-//0x469F4B00
-
-MESSAGE Used free space starts at CURRENTOFFSET
 
 PUSH
 
@@ -20,11 +14,10 @@ POIN	SortUnitsByLvFix2
 
 POP
 
-ALIGN	4
+
 SortUnitsByLvFix:
 	#incbin "SortUnitsByLvFix.gba"
 ALIGN	4
 SortUnitsByLvFix2:
 	#incbin "SortUnitsByLvFix2.gba"
-	
-  MESSAGE Used free space ends at currentOffset
+ALIGN	4

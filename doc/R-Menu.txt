@@ -1,0 +1,95 @@
+
+
+//#include eastdlib.event
+//#define RMenu(up,down,left,right,x,y,TID) "POIN up down left right;BYTE x y; SHORT TID; WORD 0 0"
+//#define RMenu(up,down,left,right,x,y,BackupTID,TIDGetter) "POIN up down left right; BYTE x y; SHORT TID; POIN 0 TIDGetter|1"
+
+//#define NameDescGetter $8AE61
+//#define ClassDescGetter $8AE8D
+//#define ConditionGetter 
+//#define StrMgcGetter $8AD95
+
+ORG $A72BF0
+  LeftName:
+ORG $A72C0C
+  LeftClass:
+ORG $A72C28
+  LeftLv:
+ORG $A72C44
+  LeftExp:
+ORG $A72C60
+  LeftHP:
+
+ORG $A72C7C
+  X1Y1:
+  POIN	0 X1Y2 LeftName X2Y1
+  BYTE	$66 $18
+  SHORT	$4DB
+  WORD	0 $808AD95
+ORG $A72C98
+  X1Y2:
+  POIN	X1Y1 X1Y3 LeftName X2Y6
+  BYTE	$69 $28
+  SHORT	$4DD
+  WORD	0 0
+ORG $A72CB4
+  X1Y3:
+  POIN	X1Y2 X1Y4 LeftName X2Y3
+  BYTE	$66 $38
+  SHORT	$4DE
+  WORD	0 0
+ORG $A72CD0
+  X1Y4:
+  POIN	X1Y3 X1Y5 LeftName X2Y4
+  BYTE	$66 $48
+  SHORT	$4DF
+  WORD	0 0
+ORG $A72CEC
+  X1Y5:
+  POIN	X1Y4 X1Y6 LeftClass X2Y5
+  BYTE	$66 $58
+  SHORT	$4E0
+  WORD	0 0
+ORG $A72D08
+  X1Y6:
+  POIN	X1Y5 X2Y1 LeftExp X2Y6
+  BYTE	$66 $68
+  SHORT	$4E1
+  WORD	0 0
+  
+ORG $A72D24
+  X2Y1:
+  POIN	0 X2Y2 X1Y1 0
+  BYTE	$A6 $18
+  SHORT	$4E2
+  WORD	0 0
+ORG $A72D40
+  X2Y2:
+  POIN	X2Y1 X2Y3 X1Y2 0
+  BYTE	$A6 $28
+  SHORT	$4E3
+  WORD	0 0
+ORG $A72D5C
+  X2Y3:
+  POIN	X2Y2 X2Y4 X1Y3 0
+  BYTE	$A6 $38
+  SHORT	$4E4
+  WORD	0 0
+ORG $A72D78
+  X2Y4:
+  POIN	X2Y3 X2Y5 X1Y4 0
+  BYTE	$A6 $48
+  SHORT	$4E5
+  WORD	0 0
+ORG $A72D94
+  X2Y5:
+  POIN	X2Y4 X2Y6 X1Y5 0
+  BYTE	$a6 $58
+  SHORT	$4E6
+  WORD	0 0
+ORG $A72DB0
+  X2Y6:
+  POIN	X2Y5 0 X1Y6 0
+  BYTE $a6 $68
+  SHORT	0
+  WORD	0 $0808ACB9

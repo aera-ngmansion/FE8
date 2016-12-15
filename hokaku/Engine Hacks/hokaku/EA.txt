@@ -1,8 +1,8 @@
-
-
-//
-
 PUSH
+
+ORG		0x252f4
+	#incbin "hokaku.gba"	///////////////ここを変える
+	
 
 ORG		0x180cc
 WORD	0x468F4900
@@ -16,9 +16,6 @@ ORG		0x251d2
 
 ORG		0x2524e
 	BYTE	$40
-
-ORG		0x252f4
-	#incbin "hokaku.gba"
 	
 ORG		0x2d724
 	#incbin "face.gba"

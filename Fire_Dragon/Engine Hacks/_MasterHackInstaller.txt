@@ -1,0 +1,4 @@
+//#include "my_hack\EA.txt"
+
+	#include "voice\Fire_Dragon_Voice.txt"
+	#include "Transform\EA.txt"

@@ -9,12 +9,12 @@
 挿入するアニメIDを指定する必要があります  
 デフォルトではFD,FE,FFとなっています  
 
-"/anime/Dragon Installer.event"のようになっている"Installer.event"が1つアニメデータです。これをテキストエディタで開くと"AnimTableEntry(0xCA)"という行がありますので、これを好きなIDに変えます。3つとも好きなIDに変えて下さい。
+"/anime/Dragon Installer.event"のようになっている"Installer.event"が1つアニメデータです。これをテキストエディタで開くと"AnimTableEntry(0xFD)"という行がありますので、これを好きなIDに変えます。3つとも好きなIDに変えて下さい。
 　なおアニメID0x100以上には未対応です。
 
 ###変身拡張リストを編集する  
 
-"/Transform/EA.txt"を開いて下さい。
+"\Transform\EA.txt"を開いて下さい。
 
 デフォルトでは  
 * 【3D】のクラス(マムクート)が  

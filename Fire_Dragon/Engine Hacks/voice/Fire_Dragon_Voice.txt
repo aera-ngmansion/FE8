@@ -6,11 +6,11 @@ ORG	$5734F4
 	
 ORG	$573680
 
-POIN	voice
+POIN	Fire_Dragon_voice
 WORD	$085734F4
 
 POP
 
-voice:
+Fire_Dragon_voice:
 	#incbin	"0x05734F4.bin"
 	

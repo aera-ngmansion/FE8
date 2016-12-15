@@ -54,6 +54,6 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
 同じように。パスは"Event Assembler\EA Standard Library\Chapter Structure Helpers.txt"
 
 ![](http://i.imgur.com/6IjQdR2.png)  
-'0x907BC8'
+    0x907BC8
 本来は烈火の指定部分だが、Event Assemblerはデフォルトの指定が烈火であるので、ここを書き換える。  
 気になる人は、正しく下の聖魔の指定を書き換えると良い。もしくは、両方を書き換えれば間違いがない。

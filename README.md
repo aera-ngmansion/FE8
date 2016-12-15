@@ -41,7 +41,7 @@ FWDS2の作戦会議室風なものを作れます
 上に"EA.txt"下に"改造したいロム"をいれ、「Assemble」で終了。
 
 # Event Assemblerの更新
-Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Assembler/Language Raws/Pointer.txt”。
+Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Assembler\Language Raws\Pointer.txt”。
 
 ![Demo](http://i.imgur.com/dvMrOHk.png)
 
@@ -49,4 +49,10 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
     POIN2, 0, 4, -game:FE6:FE7:FE8 -repeatable -priority:pointer -indexMode:8 -offsetMod:1
     ##Offset to point to.
       Offset, 0, 4, -pointer:unknown
-  
+
+##データテーブルの変更
+同じように。パスは"Event Assembler\EA Standard Library\Chapter Structure Helpers.txt"
+
+![](http://i.imgur.com/6IjQdR2.png)  
+本来は烈火の指定部分だが、Event Assemblerはデフォルトの指定が烈火であるので、ここを書き換える。  
+気になる人は、正しく下の聖魔の指定を書き換えると良い。

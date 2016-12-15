@@ -43,10 +43,10 @@ FWDS2の作戦会議室風なものを作れます
 # Event Assemblerの更新
 Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Assembler/Language Raws/Pointer.txt”。
 
-![Demo](http://imgur.com/dvMrOHk)
+![Demo](http://i.imgur.com/dvMrOHk.png)
 
-##Makes a GBA pointer pointing to offset without requiring word alignment.
+`##Makes a GBA pointer pointing to offset without requiring word alignment.
 POIN2, 0, 4, -game:FE6:FE7:FE8 -repeatable -priority:pointer -indexMode:8 -offsetMod:1
 ##Offset to point to.
-  Offset, 0, 4, -pointer:unknown
+  Offset, 0, 4, -pointer:unknown`
   

@@ -117,18 +117,16 @@ POP
 
 
 
-ALIGN	4
 TransRefProgram:	//E47880
-	#incbin "TransRefProgram.bin"
+	#incbin "TransRefProgram1.bin"
+POIN	TransformList
+	#incbin "TransRefProgram2.bin"
 
 ALIGN	4
 StrClsAndWe:		//E477FC
 	#incbin "StrClsAndWe.gba"
 POIN	TransRefProgram+$80
 	
-
 ALIGN	4
 TransformList:
 
-ORG	Free_Space+$58
-POIN	TransformList

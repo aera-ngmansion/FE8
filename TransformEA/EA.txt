@@ -1,21 +1,4 @@
-ORG	0x1000000
+ORG 0x1000000
 
-//0x668バイト+リスト分の容量を使用
+	#include "Engine Hacks\_MasterHackInstaller.txt"
 
-#include "part/Transform.event"
-
-
-//TransformList
-
-WORD $1	//総数
-WORD 0 0 0
-
-//ミルラ
-BYTE $3C $AA $C5 $C4 $C6 $C7 0 0
-SHORT $DC $DE $DD 0
-
-
-
-//リスト終了
-SHORT $FFFF
-  MESSAGE Used free space ends at CURRENTOFFSET

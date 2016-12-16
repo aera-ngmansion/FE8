@@ -1,5 +1,6 @@
 ////////////////Animation Patches for FE8////////////////////
-#include "Extensions/Hack Installation.txt"
+
+#include "Extensions\Hack Installation.txt"
 
 PUSH
 

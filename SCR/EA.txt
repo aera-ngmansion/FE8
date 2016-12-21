@@ -1,12 +1,3 @@
-ORG		0x1000000
-
-//WORD	0x46874800
-//WORD	0x468F4900
-//WORD	0x46974A00
-//WORD	0x469F4B00
-
-MESSAGE Used free space starts at CURRENTOFFSET
-
 PUSH
 
 //危険バグ
@@ -17,7 +8,7 @@ BYTE	$E0
 ORG		0x1b52a
 	#incbin "Many_function.gba"
 
-//HPバー
+///////HP Bar
 ORG		0x156AC
 BYTE	$20
 
@@ -34,7 +25,7 @@ ALIGN	4
 Vcheck:
 	#incbin "Vcheck.gba"
 
-//危険スイッチ
+/////////危険スイッチ
 
 ORG		0x1B5C0
 WORD	0x46874800
@@ -53,7 +44,7 @@ BYTE	$C0 $46
 ORG		0x1c95c
 	#incbin "0123GREEN.gba"
 
-//修正
+///////////////修正(patched)
 
 ORG		0x1b560
 WORD	0x46874800
@@ -76,7 +67,6 @@ POIN	Kiken80Select
 POP
 //
 
-ALIGN	4
 PushDanger2:
 	#incbin "PushDanger2.gba"
 ALIGN	4
@@ -95,9 +85,7 @@ Kiken1234_80:
 ALIGN	4
 GreenReset:
 	#incbin "GreenReset.gba"
-
 ALIGN	4
 JPdmp:
 	#incbin "JP.dmp"
-	
-MESSAGE Used free space ends at currentOffset
+ALIGN	4

@@ -39,7 +39,6 @@ ORG		0x5948e
 //
 POP
 
-ALIGN	4
 taiyo1:
 	#incbin "taiyo1.gba"
 POIN	taiyo11+1
@@ -56,5 +55,4 @@ taiyo3:
 ALIGN	4
 taiyo4:
 	#incbin "taiyo4.gba"
-	
-  MESSAGE Used free space ends at currentOffset
+ALIGN	4

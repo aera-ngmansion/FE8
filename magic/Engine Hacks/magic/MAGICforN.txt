@@ -28,10 +28,14 @@ WORD	$468F4900
 POIN	kousoku
 
 //「鳴動」の計算
-ORG	0xe4b3c0
- #incbin "meido_plus.gba"
+ORG	0x2B3D8
+WORD	$469F4B00
+POIN	magic_meido
 
 POP
+magic_meido:
+ #incbin "meido_plus.gba"
+ALIGN 4
 
 kousoku:
  #incbin "Atk_Spd2.gba"

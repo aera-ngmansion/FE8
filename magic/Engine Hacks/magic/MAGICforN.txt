@@ -10,7 +10,6 @@
 #include	"status\EA.txt"
 #include	"growth\EA.txt"
 #include	"layout\EA.txt"
-//#include	"_patched\EA.txt"
 
 
 PUSH//////

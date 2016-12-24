@@ -13,8 +13,8 @@
 //#include	"_patched\EA.txt"
 
 
-PUSH
-//#26から兵種個人体格値除外＝魔力化
+PUSH//////
+///////#26から兵種個人体格値除外＝魔力化
 ORG	0x2a542
 SHORT	$1C30
 BL(0x18ecc)
@@ -22,17 +22,17 @@ BL(0x18ecc)
 ORG	0x2a602
 SHORT	$7EA0
 
-//攻速計算の変更
+///////////攻速計算の変更
 ORG	0x2aae4
 WORD	$468F4900
 POIN	kousoku
 
-//「鳴動」の計算
+////////////「鳴動」の計算
 ORG	0x2B3D8
 WORD	$469F4B00
 POIN	magic_meido
 
-POP
+POP////////
 magic_meido:
  #incbin "meido_plus.gba"
 ALIGN 4

@@ -1,5 +1,5 @@
 @thumb
-	
+;@org	$0802aac0
 	
 ;•Šíí
 	mov	r1, #8

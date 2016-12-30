@@ -19,7 +19,7 @@ SHORT	$7801	//ldrb	r1, [r0, #0]
 ORG	0xB3B2C
 SHORT	$0E00	//lsr	r0, r0, #24
 ORG	0xb4a18
-#incbin"bbb.gba"
+#incbin "bbb.gba"
 ORG	0xB4FB8
 SHORT	$0e09	//lsr	r1, r1, #24
 

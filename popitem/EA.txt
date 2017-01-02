@@ -3,11 +3,11 @@ PUSH
 
 ORG		0x278d8
 WORD	0x46874800
-POIN	hack1
+POIN	pop_hack1
 
 POP
 ////
 
 ALIGN	4
-hack1:
+pop_hack1:
 	#incbin "item2.gba"

@@ -6,7 +6,7 @@ ORG		0x252f4
 
 ORG		0x180cc
 WORD	0x468F4900
-POIN	hack1
+POIN	hokaku_hack1
 
 ORG		0x22f04
 	#incbin "Trade_Jouken.gba"
@@ -22,15 +22,14 @@ ORG		0x2d724
 
 ORG		0x321B0
 WORD	0x468F4900
-POIN	hack2
+POIN	hokaku_hack2
 
 POP
 
-ALIGN	4
-hack1:
+hokaku_hack1:
 	#incbin "kaihoh.gba"
-
 ALIGN	4
-hack2:
+
+hokaku_hack2:
 	#incbin "HowtoExp.gba"
-	
+ALIGN	4

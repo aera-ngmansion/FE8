@@ -1,8 +1,0 @@
-ORG 0x
-
-
-MESSAGE Used free space starts at CURRENTOFFSET
-
-	#include "Engine Hacks\_MasterHackInstaller.txt"
-
-  MESSAGE Used free space ends at currentOffset

@@ -11,7 +11,7 @@
 #include	"growth\EA.txt"//(wip?)
 #include	"_patched\EA.txt"
 
-
+//////////////////////////////
 PUSH
 //#26から兵種個人体格値除外＝魔力化
 ORG	0x2a542
@@ -26,6 +26,13 @@ ORG	0x2aae4
 WORD	$468F4900
 POIN	kousoku
 
+///////////////////////////
+//OPデモで常に力表示
+
+ORG 0xb83d6
+BYTE	$8
+
+/////////////////////////////////
 POP
 
 kousoku:

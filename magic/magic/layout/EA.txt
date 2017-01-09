@@ -1,6 +1,17 @@
 
 
 PUSH
+
+ORG	0x89268
+BYTE	$00 $4B $9F $46
+POIN Skills_IconMG
+POP
+Skills_IconMG:
+#incbin "iconMG.gba"
+POIN	SIcon_U SIcon_C SIcon_W
+
+PUSH
+
 //ズラし
 ORG	0x894e8//技
 BYTE	$5
@@ -33,9 +44,6 @@ BYTE	$18
 //救出マーク下半
 ORG	0x8a684
 BYTE	$66
-//スキルアイコン
-ORG	0xE498D0
-#incbin "iconMG.gba"
 
 //文字変化
 //ORG	0xE4A810

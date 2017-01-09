@@ -51,17 +51,10 @@ FWDS2の作戦会議室風なものを作れます
 [ダウンロードする](http://feuniverse.us/t/event-assembler/1749)
 ![Demo](http://i.imgur.com/mqOX0fz.png)
 
-##Stirlingで空き領域アドレスをチェック
-![Demo](http://i.imgur.com/pw8gSRk.png)
-
-##EA.txtを開き、空き領域を指定
-![Demo](http://i.imgur.com/8kQXLwE.png)
-![Demo](http://i.imgur.com/uBfFf4L.png)
-
 ##パッチを当てる
 ![Demo](http://i.imgur.com/SuT7Vsp.png)
 
-上に"EA.txt"下に"改造したいロム"をいれ、「Assemble」で終了。
+上に"txt"下に"改造したいロム"をいれ、「Assemble」で終了。
 
 # Event Assemblerの更新
 Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Assembler\Language Raws\Pointer.txt”。

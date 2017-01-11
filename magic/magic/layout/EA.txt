@@ -2,6 +2,10 @@
 
 PUSH
 
+/////////////ステータス1常に力
+ORG	0x89434
+SHORT	$E016
+
 ORG	0x89268
 BYTE	$00 $4B $9F $46
 POIN Skills_IconMG

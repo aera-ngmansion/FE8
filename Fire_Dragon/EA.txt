@@ -1,4 +1,3 @@
-ORG 0x1000000
 
 	#include "Animations\Master Animation Installer.txt"
 	#include "Engine Hacks\_MasterHackInstaller.txt"

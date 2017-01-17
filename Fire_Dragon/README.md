@@ -27,14 +27,6 @@
 
 これをお好きに変えて下さい。[詳説](https://github.com/ngmansion/FE8/tree/master/TransformEA#変身拡張パッチea)は元パッチの解説で。
 
-###空き領域を指定する  
-"/EA.txt"を開きます。
-"ORG 0x1000000"の"0x1000000"を空いているアドレスに変えて下さい。重ねて言いますが0x26BE0バイトほど使います。
-
-###EventAssemblerを使う  
-"/EA.txt"を読み込んで下さい
-
-
 
 
 ##使ったもの

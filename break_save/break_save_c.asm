@@ -22,8 +22,8 @@
 	lsl	r0, r0, #9
 	orr	r1, r0
 	str	r1, [r3, #40]
-	ldrb	r0, [r7, #25]	;K‰^
-	ldrb	r2, [r7, #26]	;‘ÌŠi
+	ldrb	r0, [r7, #25]	;å¹¸é‹
+	ldrb	r2, [r7, #26]	;ä½“æ ¼
 	lsr	r1, r2, #5
 	lsl	r1, r1, #7
 	orr	r0, r1

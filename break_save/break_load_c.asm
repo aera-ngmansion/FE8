@@ -200,8 +200,8 @@ end:
 	mov	r1, #66
 	add	r1, r1, r6
 	mov	r10, r1
-	mov	r0, #33
-	add	r0, sp
+	mov	r0, sp
+	add	r0, #33
 	mov	r12, r0
 	add	r0, #1
 	mov	r8, r0

@@ -61,7 +61,7 @@ ten:
 	mov	r1, #0x80
 	lsl r1, r1, #2
 merge:
-	lsl	r1, r1, #20
+	lsl	r1, r1, #16
 	ldr	r0, [r4, #56]
 	orr	r0, r1
 	str	r0, [r4, #56]

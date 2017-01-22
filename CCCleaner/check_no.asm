@@ -15,24 +15,6 @@ meti:
 	bne	aruyo
 	b	naiyo
 scroll:
-	ldrh	r1, [r2, #0x3A]
-	ldr	r3, [r2]
-	ldrh	r3, [r3, #0x26]
-	orr	r1, r3
-	beq	goto
-	lsl	r1, r1, #15
-	mov	r3, #0
-loop:
-	lsl	r1, r1, #1
-	bmi	test
-	add	r3, #1
-	cmp	r3, #16
-	beq	goto
-	b	loop
-test:
-	lsl	r1, r1, #1
-	bne	aruyo
-goto:
 	ldr	r1, =$080174E4
 	mov lr, r1
 	@dcw $F800

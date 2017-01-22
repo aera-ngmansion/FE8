@@ -131,6 +131,8 @@ s_scroll:
 ALIGN 4
 scroll_check:
  #incbin "check.gba"
+// #incbin "check_no.gba"
+ 
 ALIGN 4
 shoki_skill:
  #incbin "shoki_skill.gba"

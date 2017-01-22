@@ -61,10 +61,9 @@ ten:
 	mov	r1, #0x80
 	lsl r1, r1, #2
 merge:
-	lsl	r1, r1, #16
-	ldr	r0, [r4, #56]
+	ldrh	r0, [r4, #0x3A]
 	orr	r0, r1
-	str	r0, [r4, #56]
+	strh	r0, [r4, #0x3A]
 	mov	r0, r4
 ldr	r1, =$080186a8
 mov	lr, r1

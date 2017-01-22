@@ -6,7 +6,10 @@
 	bne	nonchange
 	ldr	r1, =$0203a4e8
 nonchange
-
+;見切りチェック
+	ldrh	r0, [r1, #0x3A]
+	lsl r0, r0, #29	;見切りの書
+	bmi	NIHIL
 	ldr	r0, [r1, #4]
 	ldr	r1, [r1, #0]
 	ldr	r0, [r0, #40]
@@ -16,13 +19,14 @@ nonchange
 	bmi	NIHIL
 ;練達個人
 	ldr	r1, [r4]
-	ldrh	r1, [r1, #0x26]	;;ユニット0x1000練達
-	lsl	r1, r1, #19
+	ldrh	r1, [r1, #0x26]
+	ldrh	r0, [r4, #0x3A]
+	orr r1, r0
+	lsl	r1, r1, #28	;;ユニット0x8練達
 	bmi	zero
 ;練達兵種
-	ldr	r5, =$00000000	;練達兵種指定
-	cmp	r5, #0
-	beq	NIHIL
+@align 4
+	ldr	r5, [adr]
 	ldr	r1, [r4, #4]
 	ldrb	r0, [r1, #4]
 loop
@@ -44,7 +48,7 @@ zero
 	pop	{r4, r5, r6}
 	pop	{r1}
 	bx	r1
-
+adr:
 ;memo
 ;R04=0203a4e8
 ;R05=0203a568

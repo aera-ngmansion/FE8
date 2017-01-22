@@ -34,6 +34,10 @@ scroll:
 	beq	seven
 	cmp r0, #0x32
 	beq	eight
+	cmp r0, #0x2F	;0x8A
+	beq	nine
+	cmp r0, #55	;0xC1
+	beq	ten
 	b	aruyo
 one:
 	mov	r1, #0x1
@@ -58,6 +62,14 @@ seven:
 	b merge
 eight:
 	mov	r1, #0x80
+	b merge
+nine:
+	mov	r1, #0x80
+	lsl r1, r1, #1
+	b merge
+ten:
+	mov	r1, #0x80
+	lsl r1, r1, #2
 merge:
 	lsl	r1, r1, #24
 	ldr	r0, [r2, #56]

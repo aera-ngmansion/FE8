@@ -29,14 +29,12 @@
 	orr	r0, r1
 	strb	r0, [r3, #24]
 	
-	add	r7, #40
-	ldrb	r0, [r7, #19]
-	strb	r0, [r3, #25]
 	
 	mov	r2, #0
 	mov	r4, #0
+	mov r6, #0
+	add	r7, #40
 	str	r2, [r3, #20]
-	strh	r2, [r3, #18]
 loop
 	ldrb	r0, [r7, r2]
 	cmp	r0, #0
@@ -47,31 +45,28 @@ loop
 	beq	two
 	cmp	r4, #3
 	beq	three
-	strb	r0, [r3, #18]
-	strb	r2, [r3, #19]
+zero
+	strb	r0, [r3, #20]
+	lsl r6, r2, #13
 	add	r4, #1
 	b	test
 one
-	strb	r0, [r3, #20]
-	ldrb	r0, [r3, #19]
-	lsl	r1, r2, #4
-	orr	r0, r1
-	strb	r0, [r3, #19]
+	strb	r0, [r3, #21]
+	lsl	r1, r2, #10
+	orr r6, r1
 	add	r4, #1
 	b	test
-
 two
-	strb	r0, [r3, #21]
-	strb	r2, [r3, #22]
+	strb	r0, [r3, #22]
+	lsl	r1, r2, #7
+	orr r6, r1
 	add	r4, #1
 	b	test
 
 three
 	strb	r0, [r3, #23]
-	ldrb	r0, [r3, #22]
 	lsl	r1, r2, #4
-	orr	r0, r1
-	strb	r0, [r3, #22]
+	orr r6, r1
 	b	end
 test
 	add	r2, #1
@@ -79,6 +74,14 @@ test
 	bne	loop
 end
 	sub	r7, #40
+	
+	ldrh	r0, [r7, #0x3A]	;
+	strb	r0, [r3, #25]	;
+	lsr r0, r0, #8
+	orr r6, r0
+	strh	r6, [r3, #18]	;
+	
+	
 	mov	r6, #7
 	ldrb	r2, [r7, #26]
 	mov	r4, #31

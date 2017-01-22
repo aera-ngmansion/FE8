@@ -28,49 +28,49 @@ mov	r6, sp
 	lsl	r0, r2, #11
 	lsr	r0, r0, #27
 	
-	ldrb	r2, [r6, #27]
+	ldrb	r2, [r6, #28]
 	lsr	r1, r2, #7
 	lsl	r1, r1, #5
 	orr r0, r1
-	strb	r0, [r4, #26]
+	strb	r0, [r4, #26]	;‘ÌŠi
 	lsl r0, r2 #25
 	lsr r0, r0 #25
-	strb	r0, [r4, #18]
+	strb	r0, [r4, #18]	;;‘Ì—Í
 	
-	ldrb	r0, [r6, #28]
-	mov r1, #0x3B
-	strb	r0, [r4, r1]
+	ldr	r0, [r6, #20]
+	lsl r0, r0, #12
+	lsr	r0, r0, #20
+	strh	r0, [r4, #0x3A]
 	
 	
 	mov	r5, r4
 	add	r5, #40
 	
-	ldrb	r2, [r6, #21]
-	lsl	r2, r2, #28
-	lsr	r2, r2, #28
-	ldrb	r0, [r6, #23]
+	ldr	r2, [r6, #20]
+	lsr	r2, r2, #29
+	ldrb	r0, [r6, #24]	;•Ší1
 	strb	r0, [r5, r2]
 	
-	ldrb	r2, [r6, #21]
-	lsl	r2, r2, #24
-	lsr	r2, r2, #28
-	ldrb	r0, [r6, #24]
+	ldr	r2, [r6, #20]
+	lsl	r2, r2, #3
+	lsr	r2, r2, #29
+	ldrb	r0, [r6, #25]	;•Ší2
 	cmp	r0, #0
 	beq	end
 	strb	r0, [r5, r2]
 
-	ldrb	r2, [r6, #22]
-	lsl	r2, r2, #28
-	lsr	r2, r2, #28
-	ldrb	r0, [r6, #25]
+	ldr	r2, [r6, #20]
+	lsl	r2, r2, #6
+	lsr	r2, r2, #29
+	ldrb	r0, [r6, #26]	;•Ší3
 	cmp	r0, #0
 	beq	end
 	strb	r0, [r5, r2]
 
-	ldrb	r2, [r6, #22]
-	lsl	r2, r2, #24
-	lsr	r2, r2, #28
-	ldrb	r0, [r6, #26]
+	ldr	r2, [r6, #20]
+	lsl	r2, r2, #9
+	lsr	r2, r2, #29
+	ldrb	r0, [r6, #27]	;•Ší4
 	cmp	r0, #0
 	beq	end
 	strb	r0, [r5, r2]

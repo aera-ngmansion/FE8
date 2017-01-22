@@ -54,10 +54,6 @@
 	orr	r0, r1
 	strb	r0, [r6, #26]	;体格
 	
-	ldrb	r0, [r7, #25]	;
-	mov r1, #0x3B
-	strb	r0, [r6, r1]	;
-	
 	ldrb	r0, [r5, #16]
 	lsl	r0, r0, #25
 	mov	r4, r6
@@ -163,35 +159,44 @@
 	add	r6, #40
 	str	r2, [r6, #0]
 	str	r2, [r6, #4]
-	ldrb	r0, [r7, #18]
-	cmp	r0, #0
-	beq	end
-	ldrb	r1, [r7, #19]
-	lsl	r1, r1, #28
-	lsr	r1, r1, #28
-	strb	r0, [r6, r1]
+;いち
 	ldrb	r0, [r7, #20]
 	cmp	r0, #0
 	beq	end
-	ldrb	r1, [r7, #19]
-	lsr	r1, r1, #4
+	ldrh	r3, [r7, #18]
+	lsr	r1, r3, #13
 	strb	r0, [r6, r1]
+;に
 	ldrb	r0, [r7, #21]
 	cmp	r0, #0
 	beq	end
-	ldrb	r1, [r7, #22]
-	lsl	r1, r1, #28
-	lsr	r1, r1, #28
+	lsl r1, r3, #19
+	lsr	r1, r1, #29
 	strb	r0, [r6, r1]
+;さん
+	ldrb	r0, [r7, #22]
+	cmp	r0, #0
+	beq	end
+	lsl r1, r3, #22
+	lsr	r1, r1, #29
+	strb	r0, [r6, r1]
+;よん
 	ldrb	r0, [r7, #23]
 	cmp	r0, #0
 	beq	end
-	ldrb	r1, [r7, #22]
-	lsr	r1, r1, #4
+	lsl r1, r3, #25
+	lsr	r1, r1, #29
 	strb	r0, [r6, r1]
-
-end
+end:
+	lsl r1, r3, #28
+	lsr	r1, r1, #20
+	
+	ldrb	r0, [r7, #25]
+	orr r0, r1
 	sub	r6, #40
+	strh	r0, [r6, #0x3A]	;
+	
+	
 	mov	r1, #66
 	add	r1, r1, r6
 	mov	r10, r1

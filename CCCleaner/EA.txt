@@ -73,10 +73,20 @@ POIN s_scroll
 WORD	$46974A00
 POIN scroll_check
 
+
+///////スキル書き込み
+ORG 0x17b64
+WORD	$46874800
+POIN shoki_skill
+
+
 POP
 s_scroll:
  #incbin "test.gba"
 ALIGN 4
 scroll_check:
  #incbin "check.gba"
+ALIGN 4
+shoki_skill:
+ #incbin "shoki_skill.gba"
 ALIGN 4

@@ -71,7 +71,7 @@ ten:
 	mov	r1, #0x80
 	lsl r1, r1, #2
 merge:
-	lsl	r1, r1, #24
+	lsl	r1, r1, #20
 	ldr	r0, [r2, #56]
 	and	r0, r1
 	beq naiyo

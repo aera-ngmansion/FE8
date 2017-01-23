@@ -4,7 +4,7 @@
 	ldrh	r1, [r1, #6]
 	cmp	r1, #0
 	bne	ok
-	mov	r1,	#1
+	mov	r1,	#0xAC
 ok
 	mov	r0, #2
 	str	r0, [sp, #0]

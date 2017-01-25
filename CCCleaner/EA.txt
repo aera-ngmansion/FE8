@@ -114,11 +114,6 @@ WORD	$46974A00
 POIN scroll_check
 
 
-///////スキル書き込み
-ORG 0x17b64
-WORD	$46874800
-POIN shoki_skill
-
 ///////0xC1起動
 
 ORG 0x85FBAA

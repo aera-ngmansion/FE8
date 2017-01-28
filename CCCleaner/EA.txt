@@ -132,6 +132,3 @@ s_scroll:
  #incbin "test.gba"
 ALIGN 4
 
-shoki_skill:
- #incbin "shoki_skill.gba"
-ALIGN 4

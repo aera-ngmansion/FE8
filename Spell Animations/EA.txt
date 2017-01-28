@@ -1,8 +1,6 @@
 PUSH
 ORG 0x5C19C
 BYTE $90 $F0 $5F $08
-ORG 0x9081A8
-BYTE $03 $17 $6C $00
 POP
 
 //Master Animation Installer

@@ -89,3 +89,21 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
 #define GiveMoney(amount) "SMOV 0x3 amount; _GIVEITEMTOMAIN 0x0"
 #endif
 ```
+##離脱地点ポインタ設定
+パスは"Event Assembler\EA Standard Library\Escape Point.txt"
+
+![](http://i.imgur.com/J5Qg1xQ.png)
+
+```
+#ifdef _FE8_
+
+#ifndef EscapePointTableOffset
+#define EscapePointTableOffset 0x5D2090
+#endif
+
+#ifndef NPCEscapePointTableOffset
+#define NPCEscapePointTableOffset 0x5D2194
+#endif
+
+#endif
+```

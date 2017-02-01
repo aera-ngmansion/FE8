@@ -74,3 +74,18 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
 
 ![](http://i.imgur.com/xtaI1w6.png)  
     0x907BC8  
+
+##頻出イベント指定
+同じように。パスは"Event Assembler\EA Standard Library\Main Code Helpers.txt"
+
+![](http://i.imgur.com/a1whGSX.png)  
+
+```
+#ifdef _FE8_
+#define VillageEventItem(textID,background,item) "MUSI; SMOV 0x2 background; SMOV 0x3 textID; CALL $A60448; MUNO; CALL $5B9D24; SMOV 0x3 item; _GIVEITEMTO 0xFFFF; EVBIT_T 0x7; ENDA"
+#define VillageEventMoney(textID,background,money) "MUSI; SMOV 0x2 background; SMOV 0x3 textID; CALL $A60448; MUNO; CALL $5B9D24; SMOV 0x3 money; _GIVEITEMTO2 0; EVBIT_T 0x7; ENDA"
+#define HouseEvent(textID,background) "MUSI; SMOV 2 background; SMOV 3 textID; CALL $A60448; MUNO; EVBIT_T 0x7; ENDA"
+#define ConvoEvent(textID) "MUSI; TEXTSTART; TEXTSHOW textID; TEXTEND; REMA; MUNO; EVBIT_T 0x7; ENDA"
+#define GiveMoney(amount) "SMOV 0x3 amount; _GIVEITEMTOMAIN 0x0"
+#endif
+```

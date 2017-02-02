@@ -122,3 +122,21 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
 
 #endif
 ```
+
+##会話用マクロ設定
+パスは"Event Assembler\EA Standard Library\Convo Helpers.txt"
+
+![](http://i.imgur.com/5yDcqjG.png)
+
+```
+#ifdef _FE8_
+#define Text(text) "TEXTSTART; TEXTSHOW text; TEXTEND; REMA"
+#define Text(background,text) "_SETVAL 2 background; _SETVAL 3 text; CALL $A60448"
+#define SetBackground(background) "SVAL 2 background; CALL $A60420" //EVBIT 0x8 = fade in?
+#define ClearBackground "CALL 0xA603FC"
+#define ClearBackgroundSmooth "FADI 0x10; ClearBackground"
+#define CenterTutorialTextBox "_SETVAL 0xB 0xFFFFFFFF"
+#define FlashWhite "FAWI 0x20; STAL 0x10; FAWU 0x20"
+#define FlashBlack "FADI 0x20; STAL 0x10; FADU 0x20"
+#endif
+```

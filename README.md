@@ -52,7 +52,6 @@ FWDS2の作戦会議室風なものを作れます
 
 # EventAssemblerの使い方
 [ダウンロードする](http://feuniverse.us/t/event-assembler/1749)
-![Demo](http://i.imgur.com/mqOX0fz.png)
 
 ##パッチを当てる
 ![Demo](http://i.imgur.com/DSwzAjZ.png)

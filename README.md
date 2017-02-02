@@ -76,7 +76,23 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
     0x907BC8  
 
 ##頻出イベント指定
-同じように。パスは"Event Assembler\EA Standard Library\Main Code Helpers.txt"
+2カ所あります。パスは"Event Assembler\EA Standard Library\Main Code Helpers.txt"
+
+![](http://i.imgur.com/iMgGkSP.png)
+
+```
+#ifdef _FE8_
+#define Village(eventID,offset,X,Y,breakID) 	"VILL eventID offset [X,Y] 0x10; LOCA breakID [X,Y-1] 0x20"
+#define House(eventID,offset,X,Y) 		"LOCA eventID offset [X,Y] 0x10"
+#define Armory(offset,X,Y) 				"SHOP 0 offset [X,Y] 0x16"
+#define Vendor(offset,X,Y) 				"SHOP 0 offset [X,Y] 0x17"
+#define SecretShop(offset,X,Y) 			"SHOP 0 offset [X,Y] 0x18"
+#define Chest(item,X,Y) 				"CHES 0 item [X,Y] 0x14"
+#define ChestMoney(amountOfMoney,X,Y) 	"CHES 0 0x77+amountOfMoney*0x10000 [X,Y] 0x14"
+#define Door(X,Y) 						"DOOR 0 [X,Y] 0x12"
+#define Seize(eventID,offset,X,Y) 		"LOCA eventID offset [X,Y] 0x11"
+#endif
+```
 
 ![](http://i.imgur.com/a1whGSX.png)  
 

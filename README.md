@@ -140,3 +140,35 @@ Event Assembler内の”Pointer.txt”に追記をする。パスは”Event Ass
 #define FlashBlack "FADI 0x20; STAL 0x10; FADU 0x20"
 #endif
 ```
+
+##ASM会話設定
+パスは"Event Assembler\Language Raws\Main codes\Character based events.txt"
+```
+CHARASM, 0x4, 16, -game:FE8:FE7 -indexMode:8 -priority:main
+	Event ID, 2, 2
+	Event pointer, 4, 4, -pointer:none
+##Character to start the event.
+	Character 1, 8, 1
+##The other character.
+	Character 2, 9, 1
+	ASM pointer, 12, 4, -pointer:ASM
+
+CHARASM, 0, 4, -priority:main -language:FE8:FE7 -end -indexMode:8 -noDisassembly
+	0, 0, 4, -fixed
+```
+
+##ASM常時条件設定
+パスは"Event Assembler\Language Raws\Main codes\Others.txt"
+```
+##Event that only happens if the ASM routine returns true.
+ASME, 0xE, 12, -game:FE8:FE7 -priority:main -indexMode:8
+##Event ID of the event. After the event ID has been used,
+##this event can't be invoked. Leaving this 0 will allow event to
+##whenever otherwise possible.
+	Event ID, 2, 2
+##Pointer to event to happen.
+	Pointer to event, 4, 4, -pointer
+##ASM routine to run that must return 1 for the this event to happen.
+##Thumb routines must also have 1 added to their offset.
+	ASM Pointer, 8, 4, -pointer
+```

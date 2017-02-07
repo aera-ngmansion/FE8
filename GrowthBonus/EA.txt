@@ -1,0 +1,7 @@
+PUSH
+
+ORG $2B9D2
+ BYTE $00 20	//01 20で魔力あり
+ #incbin "Bonus3.gba"
+
+POP

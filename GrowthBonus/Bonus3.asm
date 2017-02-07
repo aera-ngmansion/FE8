@@ -32,13 +32,12 @@ mov	lr, r1
 	ldsb	r0, [r7, r4]
 	add	r6, r6, r0
 	add	r4, #1
-	cmp	r4, #7
+	cmp	r4, #6
 	ble loopin
 ;魔力
 	ldrb	r0, [r5, #23]
 	add	r0, r10
 	mov r1, r9
-	lsl	r1, r1, #28
 	lsr	r1, r1, #27
 	add	r0, r0, r1
 	lsl	r1, r1, #2

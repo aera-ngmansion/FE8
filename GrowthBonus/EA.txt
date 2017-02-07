@@ -1,7 +1,12 @@
 PUSH
+ORG $2b9e6
 
-ORG $2B9D2
- BYTE $00 20	//01 20で魔力あり
- #incbin "Bonus3.gba"
+BYTE $C0 $46 $00 $48 $87 $46
+POIN	GroBnu3
 
 POP
+
+
+GroBnu3:
+ #incbin "Bonus3.gba"
+ALIGN 4

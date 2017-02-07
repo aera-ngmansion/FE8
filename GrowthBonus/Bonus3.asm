@@ -1,13 +1,13 @@
 @thumb
-@org $0802b9d4
-	mov r8, r0
+;@org 0002b9e6
 	bl	RED10
-saihan:
-	mov	r4, #0
+
 	ldr	r5, [r7]
 	add	r5, #28
 	mov	r6, #0
 	add	r7, #115
+saihan:
+	mov	r4, #0
 loopin:
 	ldrb	r0, [r5, r4]
 	add	r0, r10
@@ -17,9 +17,16 @@ loopin:
 	lsl	r2, r2, #2
 	mov r1, r9
 	lsl	r1, r2
-	lsr	r1, r1, #28
+	lsr	r1, r1, #27
 	add	r0, r0, r1
-	bl	$0802b8e8
+	lsl	r1, r1, #2
+	add	r0, r0, r1
+	
+ldr	r1, =$0802b8e8
+mov	lr, r1
+@dcw	$F800
+	
+	
 
 	strb	r0, [r7, r4]
 	ldsb	r0, [r7, r4]
@@ -27,43 +34,33 @@ loopin:
 	add	r4, #1
 	cmp	r4, #7
 	ble loopin
-
-	mov r0, r8
-	cmp	r0, #0
-	beq	magnan
+;魔力
 	ldrb	r0, [r5, #23]
 	add	r0, r10
 	mov r1, r9
 	lsl	r1, r1, #28
-	lsr	r1, r1, #28
+	lsr	r1, r1, #27
 	add	r0, r0, r1
-	bl	$0802b8e8
+	lsl	r1, r1, #2
+	add	r0, r0, r1
+	
+ldr	r1, =$0802b8e8
+mov	lr, r1
+@dcw	$F800
 	strb	r0, [r7, r4]
 	ldsb	r0, [r7, r4]
 	add	r6, r6, r0
 
 
-
-
-magnan:
-	sub	r7, #115
 	cmp	r6, #1
 	ble	saihan
-	b	$0802bb28
+	sub	r7, #115
+	ldr	r0, =$0802bb28
+	mov	pc, r0
 	
 	
 RED10:
 	push	{lr}
-	ldr	r0, [r7, #12]
-	mov	r1, #128
-	lsl	r1, r1, #6
-	and	r0, r1
-	mov	r1, #0
-	mov	r10, r1
-	cmp	r0, #0
-	@dcw $D001
-	mov	r0, #5
-	mov	r10, r0
 ldr	r0, =$0805BDCC
 mov	lr, r0
 @dcw	$F800
@@ -106,27 +103,26 @@ jump3
 	lsl	r2, r2, #12
 	add	r0, r0, r2
 jump4
-	
-	cmp	r1, #0x5F	;女神の像
-	bne		jump5
-	mov	r2, #0x2
-	lsl	r2, r2, #16
-	add	r0, r0, r2
-jump5
-	
+		
 	cmp	r1, #0x60	;竜の盾
 	bne		jump6
 	mov	r2, #0x1
-	lsl	r2, r2, #20
+	lsl	r2, r2, #16
 	add	r0, r0, r2
 jump6
 	
 	cmp	r1, #0x61	;魔除け
 	bne		jump7
 	mov	r2, #0x1
-	lsl	r2, r2, #24
+	lsl	r2, r2, #20
 	add	r0, r0, r2
 jump7
+	cmp	r1, #0x5F	;女神の像
+	bne		jump5
+	mov	r2, #0x2
+	lsl	r2, r2, #24
+	add	r0, r0, r2
+jump5
 	cmp	r1, #0x63	;ボデリン
 	bne		jump8
 	mov	r2, #0x1

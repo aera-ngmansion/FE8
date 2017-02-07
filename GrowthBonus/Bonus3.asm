@@ -36,6 +36,8 @@ mov	lr, r1
 	ble loopin
 ;魔力
 	ldrb	r0, [r5, #23]
+	cmp	r0, #0
+	beq	nonmag
 	add	r0, r10
 	mov r1, r9
 	lsr	r1, r1, #27
@@ -49,7 +51,7 @@ mov	lr, r1
 	strb	r0, [r7, r4]
 	ldsb	r0, [r7, r4]
 	add	r6, r6, r0
-
+nonmag:
 
 	cmp	r6, #1
 	ble	saihan

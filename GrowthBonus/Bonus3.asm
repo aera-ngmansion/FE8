@@ -17,7 +17,8 @@ loopin:
 	lsl	r2, r2, #2
 	mov r1, r9
 	lsl	r1, r2
-	lsr	r1, r1, #27
+	lsr	r1, r1, #28
+	lsl	r1, r1, #1
 	add	r0, r0, r1
 	lsl	r1, r1, #2
 	add	r0, r0, r1
@@ -40,7 +41,8 @@ mov	lr, r1
 	beq	nonmag
 	add	r0, r10
 	mov r1, r9
-	lsr	r1, r1, #27
+	lsr	r1, r1, #28
+	lsl	r1, r1, #1
 	add	r0, r0, r1
 	lsl	r1, r1, #2
 	add	r0, r0, r1

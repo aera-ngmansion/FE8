@@ -100,8 +100,6 @@ MAGI:
 	ldr	r0, [r2, #12]
 	add	r0, #4
 	ldrb	r0, [r0, r5]
-	cmp	r0, #0
-	beq	TATE_loop
 	ldr	r2, [r2, #8]
 	lsl	r2, r2, #28
 	bpl	kowareru

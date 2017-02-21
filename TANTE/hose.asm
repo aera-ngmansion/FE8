@@ -21,14 +21,14 @@ loop:
 	@dcw $F800
 	mov	r2, r1
 	mov	r1, r0
-	lsl	r0, r1, #6	;‚ƒpƒbƒ`‚Ì‰º
+	lsl	r0, r1, #6	;ç›¾ãƒ‘ãƒƒãƒã®ä¸‹
 	bmi	TATEkamo
 	b	loop
 naiyo:
 	mov	r1, #0
 	b	end
 TATEkamo:
-	lsl	r0, r1, #5	;‚ƒpƒbƒ`‚Ì2‰º
+	lsl	r0, r1, #5	;ç›¾ãƒ‘ãƒƒãƒã®2ä¸‹
 	bmi	CLASSN
 	b	mikke
 	

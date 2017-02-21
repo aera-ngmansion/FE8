@@ -1,0 +1,55 @@
+TATE_CLAN:
+BYTE $03 $04 $05 $06 $07 $08 $09 $0A $0B $0C $35 $36 $00
+
+
+
+ALIGN 4
+
+PUSH
+//////////守備age
+
+ORG 0x18f7a
+SHORT	$2200
+WORD	$469F4B00
+POIN	TANTE_hose
+
+
+//////////魔防age
+
+ORG	0x18fa2
+SHORT	$2201
+WORD	$469F4B00
+POIN	TANTE_hose
+
+POP
+
+TANTE_hose:
+#incbin "hose.gba"
+ALIGN 4
+POIN	TATE_CLAN
+
+
+///////////破損
+
+PUSH
+ORG 0x2aec0
+WORD	$46874800
+POIN	TANTE_hasso
+POP
+
+TANTE_hasso:
+#incbin "hason.gba"
+ALIGN 4
+
+
+//////////盾計算
+PUSH
+ORG 0x2b3b0
+WORD	$46874800
+POIN	TANTE_tan
+POP
+
+TANTE_tan:
+#incbin "tan.gba"
+POIN	TATE_CLAN
+

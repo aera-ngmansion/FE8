@@ -23,7 +23,7 @@ osoba:
 	beq	normal
 	mov	r2, r10
 	cmp	r2, #0xDE
-	beq	KOWARE
+	beq	BREAK
 	cmp	r1, #255
 	beq	normal	;壊れないならジャンプ
 	
@@ -34,6 +34,12 @@ osoba:
 	sub	r2, #1
 	strb	r2 [r1, #1]
 	b	normal
+BREAK:
+	add	r1, r8
+	ldrb	r2 [r1, #1]
+	mov	r2, #0
+	strb	r2 [r1, #1]
+	
 KOWARE:
 	sub	r4, r4, r0
 normal:

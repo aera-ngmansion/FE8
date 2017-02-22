@@ -59,8 +59,6 @@ SHIELD:
 	push	{r4, r5, r6, lr}
 	mov	r5, r0 ;魔法判定
 	mov	r4, r1 ;相手ステータス
-	@align 4
-	ldr	r6 [adr]
 
 	mov	r3, #28
 TATE_loop:
@@ -88,8 +86,9 @@ naiyo:
 	
 	
 TATEkamo:
-	lsl	r0, r1, #5	;盾パッチの2下
-	bmi	CLASSN
+	ldr	r6, [r2, #16]
+	cmp	r6, #0
+	bne	CLASSN
 	b	MAGI
 
 CLASSN:

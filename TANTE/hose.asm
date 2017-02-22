@@ -28,14 +28,13 @@ naiyo:
 	mov	r1, #0
 	b	end
 TATEkamo:
-	lsl	r0, r1, #5	;盾パッチの2下
-	bmi	CLASSN
+	ldr	r6, [r2, #16]
+	cmp	r6, #0
+	bne	CLASSN
 	b	mikke
 	
 	
 CLASSN:
-@align 4
-	ldr	r6, [adr]
 	ldr	r0, [r4, #4]
 	ldrb	r0, [r0, #4]
 CALN_loop:
@@ -60,5 +59,3 @@ end:
 	pop	{r1}
 	bx	r1
 	
-@ltorg
-adr:

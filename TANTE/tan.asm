@@ -21,6 +21,9 @@ osoba:
 	bl	SHIELD
 	cmp	r0, #0
 	beq	normal
+	mov	r2, r10
+	cmp	r2, #0xDE
+	beq	KOWARE
 	cmp	r1, #255
 	beq	normal	;壊れないならジャンプ
 	
@@ -31,7 +34,7 @@ osoba:
 	sub	r2, #1
 	strb	r2 [r1, #1]
 	b	normal
-KOWARE
+KOWARE:
 	sub	r4, r4, r0
 normal:
 	ldr	r0, =$0802b3b8

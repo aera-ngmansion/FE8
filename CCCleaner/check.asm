@@ -16,6 +16,8 @@ meti:
 	b	naiyo
 scroll:
 	ldrh	r1, [r2, #0x3A]
+	lsl	r1, r1, #20
+	lsr	r1, r1, #20
 	ldr	r3, [r2]
 	ldrh	r3, [r3, #0x26]
 	orr	r1, r3

@@ -21,14 +21,25 @@ scroll:
 	ldr	r3, [r2]
 	ldrh	r3, [r3, #0x26]
 	orr	r1, r3
+;ã≠â^
+	ldr	r3, [r2]
+	add	r3, #0x31
+	ldrb	r3, [r3]
+	cmp	r3, #4
+	ble	nonski
+	mov	r3, #0x80
+	lsl	r3, r3, #9
+	orr	r1, r3
+nonski:
+	cmp	r1, #0
 	beq	goto
-	lsl	r1, r1, #15
+	lsl	r1, r1, #14	;å≥15
 	mov	r3, #0
 loop:
 	lsl	r1, r1, #1
 	bmi	test
 	add	r3, #1
-	cmp	r3, #16
+	cmp	r3, #17	;å≥16(çáÇ¡ÇƒÇΩÇ©ÇÕì‰)
 	beq	goto
 	b	loop
 test:

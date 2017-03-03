@@ -12,7 +12,7 @@ POIN Skills_IconMG
 POP
 Skills_IconMG:
 #incbin "iconMG.gba"
-POIN	SIcon_U SIcon_C SIcon_W SIcon_S
+POIN	SIcon_U SIcon_C SIcon_W SIcon_S SIcon_A SIcon_M
 
 PUSH
 

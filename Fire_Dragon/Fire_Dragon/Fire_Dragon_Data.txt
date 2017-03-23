@@ -1,6 +1,5 @@
 
 PUSH
-
 ORG	$5734F4
 	#incbin	"0x0573503.bin"
 	
@@ -8,7 +7,6 @@ ORG	$573680
 
 POIN	Fire_Dragon_voice
 WORD	$085734F4
-
 POP
 
 Fire_Dragon_voice:
@@ -18,3 +16,4 @@ Fire_Dragon_voice:
 #include "Karyu_Attack Installer.event" //FD
 #include "StanD Installer.event" //FE
 #include "Return Installer.event" //FF
+ALIGN 4

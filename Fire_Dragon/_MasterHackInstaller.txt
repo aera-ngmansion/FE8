@@ -1,4 +1,4 @@
 //#include "my_hack\EA.txt"
 
-	#include "voice\Fire_Dragon_Voice.txt"
+	#include "Fire_Dragon\Fire_Dragon_Data.txt"
 	#include "Transform\EA.txt"

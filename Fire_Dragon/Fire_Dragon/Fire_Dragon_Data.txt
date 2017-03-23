@@ -17,3 +17,35 @@ Fire_Dragon_voice:
 #include "StanD Installer.event" //FE
 #include "Return Installer.event" //FF
 ALIGN 4
+
+/////////////////封印火竜データ
+
+PUSH
+ORG $214860
+POIN soun_232
+BYTE 6 0 6 0
+POIN soun_233
+BYTE 6 0 6 0
+POP
+
+soun_232:
+BYTE $02 $00 $14 $00
+WORD $08201CBC
+POIN	soun_232_0
+POIN	soun_232_1
+
+soun_233:
+BYTE $02 $00 $14 $00
+WORD $08201CBC
+POIN	soun_233_0
+POIN	soun_233_1
+
+soun_232_0:
+	#incbin "232_0"
+soun_232_1:
+	#incbin "232_1"
+soun_233_0:
+	#incbin "233_0"
+soun_233_1:
+	#incbin "233_1"
+ALIGN 4

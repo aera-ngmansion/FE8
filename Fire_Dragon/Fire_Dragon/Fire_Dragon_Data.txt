@@ -11,9 +11,8 @@ POP
 
 Fire_Dragon_voice:
 	#incbin	"0x05734F4.bin"
-	
-	
-#include "Karyu_Attack Installer.event" //FD
+ALIGN 4
+#include "Redra Installer.event" //FD
 #include "StanD Installer.event" //FE
 #include "Return Installer.event" //FF
 ALIGN 4

@@ -1,0 +1,67 @@
+/*
+おまけ　騎馬系の救出値20固定
+
+0x18726 > 14 20
+
+19固定(トラキア)なら > 13 20
+*/
+
+PUSH
+ORG	$5C5058 //移動後の呼魔つぶし。本来は召喚の位置
+	POIN	cap_word
+	SHORT	$060C $0661		//右の$0641がヘルプ
+	SHORT	$4F00 0
+	POIN	Capture_Usability+1
+	WORD	0
+	POIN	Capture_Effect_Func+1
+	WORD	0 $08022BF9 $08022C61
+POP
+
+cap_word:
+BYTE $81 $40 $8F $AC $8E $E8 $92 $B2 $00 $00	//小手調
+//BYTE $81 $40 $8E $E8 $89 $C1 $8C $B8 $00 $00	//手加減
+//BYTE $81 $40 $95 $DF $8A $6C $00 $00	//捕獲
+
+
+	ALIGN 4
+	Is_Capture_Set:
+	#incbin "Is_Capture_Set.dmp"
+
+	ALIGN 4
+	Capture_Usability:
+	#incbin "Capture_Usability_Func_Easy.gba"
+	
+	ALIGN 4
+	Capture_Effect_Func:
+	#incbin "Capture_Effect_Func.gba"
+	
+PUSH
+	ORG $22840
+	WORD	$469F4B00
+	POIN	Cancel_Capture
+POP
+	ALIGN 4
+	Cancel_Capture:
+	#incbin "Cancel_Capture.gba"
+	
+	
+PUSH
+	ORG $3283c
+	WORD	$469F4B00
+	POIN	After_Battle_Rescue
+POP
+	ALIGN 4
+	After_Battle_Rescue:
+	#incbin "After_Battle_Rescue.gba"
+	POIN Is_Capture_Set
+	
+	
+PUSH
+	ORG $869b0
+	WORD	$468F4900
+	POIN	STOP_DEAD_WORD
+POP
+	ALIGN 4
+	STOP_DEAD_WORD:
+	#incbin "stop.gba"
+	

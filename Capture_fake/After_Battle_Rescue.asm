@@ -4,11 +4,10 @@
 ;r4=defender, r6=attacker battle structs
 ;r7 should contain char data ptr of person dropping item, 0 if capturing; r5 has char data of receiver
 
-	ldr	r0, =$0202BCFB
-	ldrb	r0, [r0]
-	cmp	r0, #0
-	bne	Non
 	ldrb	r5,[r6,#0xB]		;attacker allegiance
+	lsl	r0, r5, #24
+	lsr	r0, r0, #30
+	bne	Non
 	ldrb	r7,[r4,#0xB]		;defender allegiance(‘Ò‚¿•š‚¹‚Å‚ ‚ë‚¤‚Æ³‚µ‚¢)
 
 @align 4

@@ -1,0 +1,31 @@
+//各奥義2職まで
+listDragon:
+ BYTE	$00 $00
+listMeido:
+ BYTE	$40 $00
+listRevenge:
+ BYTE	$43 $00
+listStan:
+ BYTE	$21 $00
+listStone:
+ BYTE	$49 $00
+listFlower:
+ BYTE	$00 $00
+ 
+
+PUSH
+ORG	0x2B3D8
+WORD	$469F4B00
+POIN	magic_meido
+POP
+
+ALIGN 4
+magic_meido:
+ #incbin "meido_plus.gba"
+ALIGN 4
+POIN	listDragon
+POIN	listMeido
+POIN	listRevenge
+POIN	listStan
+POIN	listStone
+POIN	listFlower

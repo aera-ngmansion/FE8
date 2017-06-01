@@ -10,6 +10,7 @@
 #include	"status\EA.txt"
 #include	"growth\EA.txt"
 #include	"layout\EA.txt"
+#include	"magicThird.txt"
 
 ////////////////////////////
 PUSH
@@ -27,11 +28,6 @@ ORG	0x2aae4
 WORD	$468F4900
 POIN	kousoku
 
-////////////////////////
-//「鳴動」の計算
-ORG	0x2B3D8
-WORD	$469F4B00
-POIN	magic_meido
 
 ///////////////////////////
 //OPデモで常に力表示
@@ -41,9 +37,7 @@ BYTE	$8
 
 /////////////////////////
 POP
-magic_meido:
- #incbin "meido_plus.gba"
-ALIGN 4
+
 
 kousoku:
  #incbin "Atk_Spd2.gba"

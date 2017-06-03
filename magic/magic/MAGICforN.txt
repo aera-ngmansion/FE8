@@ -10,7 +10,6 @@
 #include	"status\EA.txt"
 #include	"growth\EA.txt"
 #include	"layout\EA.txt"
-#include	"magicThird.txt"
 
 ////////////////////////////
 PUSH
@@ -35,7 +34,12 @@ POIN	kousoku
 ORG 0xb83d6
 BYTE	$8
 
-/////////////////////////
+/////////////////////////魔力鳴動用フラグ
+
+ORG	0x2B3D6
+SHORT	$23AA	//mov r3, 0xAA
+
+///////////////////
 POP
 
 
@@ -43,4 +47,4 @@ kousoku:
  #incbin "Atk_Spd2.gba"
 ALIGN 4
 
-
+//////////////////////

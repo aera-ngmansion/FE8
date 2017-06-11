@@ -1,6 +1,6 @@
 @thumb
 	push	{r4, lr}
-	ldr	r4, =$080168D0
+	ldr	r4, =$080168D0	;装備チェック
 	mov	lr, r4
 	mov	r4, r0
 	@dcw	$F800
@@ -15,7 +15,8 @@
 	lsl	r1, r0, #3
 	add	r1, r1, r0
 	lsl	r1, r1, #2
-	ldr	r0, =$0885E068
+	ldr	r0, =$080172bc	;アイテム先頭アドレス
+	ldr	r0, [r0]		;アイテム先頭アドレスロード
 	add	r1, r1, r0
 	ldr	r0, [r1, #12]
 	cmp	r0, #0

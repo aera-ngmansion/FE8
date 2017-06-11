@@ -2,10 +2,9 @@
 @org	$08089598
 ;–‚—Í
 	ldr	r0, [r5, #12]
-	bl	$08018ec4
-	ldr	r0, [r5, #12]
-	ldrb	r0, [r0, #26]
-	str	r0, [sp, #0]
+	bl	$08018ecc
+	str	r0, [sp]
+	
 	ldr	r1, [r5, #12]
 	ldrb	r3, [r1, #26]	;‘ÌŠi“Ç‚İ‚İ
 	ldr	r0, [r1, #4]

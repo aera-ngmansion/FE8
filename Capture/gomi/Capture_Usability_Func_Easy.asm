@@ -13,7 +13,7 @@ lsl		r2,r2,#0x4				;is in ballista
 tst		r1,r2
 bne		RetFalse
 
-;•’Ê‚ÌUŒ‚oŒ»”»’è
+;æ™®é€šã®æ”»æ’ƒå‡ºç¾åˆ¤å®š
 ldr	r0, =$0802495e
 mov	pc, r0
 

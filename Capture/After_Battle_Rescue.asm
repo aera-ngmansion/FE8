@@ -1,15 +1,30 @@
-@thumb
-
-;bl'd to from 328F0
+;bl'd to from 328F0(JP=$0803283c)
 ;r4=defender, r6=attacker battle structs
 ;r7 should contain char data ptr of person dropping item, 0 if capturing; r5 has char data of receiver
 
-	ldrb	r5,[r6,#0xB]		;attacker allegiance
+
+@thumb
+	ldrb	r5,[r6,#0xB]		;attacker allegiance(æ”»ã‚å´ã®æ‰€å±)
 	lsl	r0, r5, #24
 	lsr	r0, r0, #30
-	bne	Non
-	ldrb	r7,[r4,#0xB]		;defender allegiance(‘Ò‚¿•š‚¹‚Å‚ ‚ë‚¤‚Æ³‚µ‚¢)
-
+	beq	CheckStart
+;
+;ã‚ªãƒªã‚¸ãƒŠãƒ«ã®å‡¦ç†
+;
+	mov	r0, #19
+	ldsb	r0, [r6, r0]	;ç¾åœ¨HPï¼Ÿ
+	cmp	r0, #0
+	bne	Jump
+	ldr	r0, =$08032844
+	mov	pc, r0
+Jump:
+	ldr	r0, =$08032858
+	mov	pc, r0
+;
+;å‡¦ç†ã‚¹ã‚¿ãƒ¼ãƒˆ
+;
+CheckStart:
+	ldrb	r7,[r4,#0xB]		;defender allegiance(å—ã‘å´ã®æ‰€å±)(å¾…ã¡ä¼ã›ã§ã‚ã‚ã†ã¨æ­£ã—ã„)
 @align 4
 ldr		r0,[Get_Char_Data]
 mov		r14,r0
@@ -22,6 +37,7 @@ mov		r0,r5
 	ldrb	r0,[r6,#0x13]		;attacker current hp
 	cmp		r0,#0x0
 	beq		SwitchCharacters
+Non:
 	mov		r7,#0x0
 	b		GoBack				;if neither party is dead, skip this business
 SwitchCharacters:
@@ -47,13 +63,13 @@ mov		r0,r7
 	mov		r0,r5
 	@dcw	0xF800
 	cmp		r0,#0x0
-	beq		Non		;UŒ‚Ò‚ª•ßŠlUŒ‚‚Å‚È‚¢‚È‚ç‚ÎƒWƒƒƒ“ƒv
-;‹R”n”»’è
+	beq		Return		;æ”»æ’ƒè€…ãŒæ•ç²æ”»æ’ƒã§ãªã„ãªã‚‰ã°ã‚¸ãƒ£ãƒ³ãƒ—
+;é¨é¦¬åˆ¤å®š
 	ldr	r1, [r7, #4]
 	ldr	r1, [r1, #40]
 	lsl	r0, r1, #31
 	bmi	Reset
-;—A‘—‘Ì”»’è
+;è¼¸é€ä½“åˆ¤å®š
 	ldr	r1, [r7]
 	ldr	r1, [r1, #40]
 	ldr	r0, [r7, #4]
@@ -62,7 +78,7 @@ mov		r0,r7
 	lsl	r0, r1, #22
 	bmi	Reset
 	
-	ldr	r0, =$08018030	;‹~o”»’è
+	ldr	r0, =$08018030	;æ•‘å‡ºåˆ¤å®š
 	mov	lr, r0
 	mov	r0, r5
 	mov	r1, r7
@@ -70,9 +86,9 @@ mov		r0,r7
 	lsl	r0, r0, #24
 	cmp	r0, #0
 	beq	Reset
-;‹ßÚ”»’è
+;è¿‘æ¥åˆ¤å®š
 	ldr	r0,	=$0203a4d2
-	ldrb	r0, [r0]	;‹——£
+	ldrb	r0, [r0]	;è·é›¢
 	cmp	r0, #1
 	bne	Reset
 	mov	r0, #1
@@ -96,7 +112,7 @@ mov		r14,r0
 mov		r0,r5
 @dcw	0xF800
 cmp		r0,#0x0
-beq		Non
+beq		Return
 Reset:
 	ldr		r0,[r5,#0xC]
 	mov		r1,#0x10
@@ -109,7 +125,7 @@ Half:
 	and		r0,r1
 str		r0,[r5,#0xC]		;remove the 'is capturing' bit
 
-Non:
+Return:
 ldr	r0, =$08032874
 mov	pc, r0
 

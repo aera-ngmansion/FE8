@@ -21,7 +21,7 @@ ItemLoop:
 	add		r4,r4,r5
 	ldrh	r4,[r4]
 	cmp		r4,#0x0
-	beq		RetFalse	;ƒAƒCƒeƒ€––”ö‚ÅI—¹
+	beq		RetFalse	;ã‚¢ã‚¤ãƒ†ãƒ æœ«å°¾ã§çµ‚äº†
 	mov		r0,#0xFF
 	and		r0,r4
 	mov		r1,#0x24
@@ -51,7 +51,7 @@ ItemLoop:
 	mov	r1, #64
 	and	r0, r1
 	cmp	r0, #0
-	bne	RetFalse	;“ä‚Ì•ªŠò@‹~o’†‚Æ‚©‚Ì‚Æ‚±‚ëH
+	bne	RetFalse	;è¬ã®åˆ†å²ã€€æ•‘å‡ºä¸­ã¨ã‹ã®ã¨ã“ã‚ï¼Ÿ
 
 	push	{r4, r5}
 	mov	r4, #16
@@ -88,7 +88,7 @@ mov	lr, r2
 ;	mov		r14,r0
 ;	mov		r0,r5
 ;	@dcw	0xF800
-;	ldr		r0, =$0203E0E8	;—×Ú–¡•û”‚È‚ÇBğŒ‚ÌˆêŸ‘‚«‚İêŠTargetQueueCounter(0203E0EC)	;@I think that's what this is
+;	ldr		r0, =$0203E0E8	;éš£æ¥å‘³æ–¹æ•°ãªã©ã€‚æ¡ä»¶ã®ä¸€æ¬¡æ›¸ãè¾¼ã¿å ´æ‰€TargetQueueCounter(0203E0EC)	;@I think that's what this is
 ;	ldr		r0,[r0]
 ;	cmp		r0,#0x0
 ;	beq		NextWeapon
@@ -105,7 +105,7 @@ GoBack:
 	pop		{r1}
 	bx		r1
 
-;•’Ê‚ÌUŒ‚oŒ»”»’è
+;æ™®é€šã®æ”»æ’ƒå‡ºç¾åˆ¤å®š
 ;ldr	r0, =$0802495e
 ;mov	pc, r0
 

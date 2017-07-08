@@ -39,5 +39,5 @@ RangeMap:
 @dcd	$0202E4E0	;0x0202E4E4
 Fill_One_Range_Map:
 @dcd	$08024f20	; 0x08024F70
-Capture_Target_Check:	;RegularAttackMap‚Ì“r’†
+Capture_Target_Check:	;RegularAttackMapã®é€”ä¸­
 @dcd	$080251cc+1	;0x0802517C+1

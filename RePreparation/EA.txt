@@ -1,0 +1,26 @@
+
+PUSH
+
+ORG 0xb6910
+WORD	$468F4900
+POIN Change1pre
+
+
+ORG 0xB692A
+SHORT 0xE3C6
+
+ORG 0xB692C
+WORD	$46874800
+POIN Change2pre
+
+ORG 0x9ef6e
+bl($B692C)
+ORG 0xd13d2
+bl($B692C)
+
+POP
+
+Change1pre:
+
+
+Change2pre:

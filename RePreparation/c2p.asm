@@ -6,7 +6,7 @@
 	mov  lr, r1
 	@dcw $F800
 	add  r0, #0x72
-	ldrb r0, [r0]
+	ldrh r0, [r0]
 ;mov	r0, #52
 	ldr  r1, =$08002570
 	mov  lr, r1

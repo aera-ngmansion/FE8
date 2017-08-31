@@ -160,10 +160,10 @@
 	str	r2, [r6, #0]
 	str	r2, [r6, #4]
 ;いち
+	ldrh	r3, [r7, #18]
 	ldrb	r0, [r7, #20]
 	cmp	r0, #0
 	beq	end
-	ldrh	r3, [r7, #18]
 	lsr	r1, r3, #13
 	strb	r0, [r6, r1]
 ;に

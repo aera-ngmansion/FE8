@@ -159,8 +159,8 @@
 	add	r6, #40
 	str	r2, [r6, #0]
 	str	r2, [r6, #4]
-;いち
 	ldrh	r3, [r7, #18]
+;いち
 	ldrb	r0, [r7, #20]
 	cmp	r0, #0
 	beq	end

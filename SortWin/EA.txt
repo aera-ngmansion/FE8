@@ -13,9 +13,9 @@ POP
 ALIGN 4
 
 asm_SortWin1:
-incbin clip1.gba
+#incbin clip1.gba
 
 asm_SortWin2:
-incbin clip2.gba
+#incbin clip2.gba
 
 ALIGN 4

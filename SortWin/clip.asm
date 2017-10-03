@@ -20,8 +20,10 @@ jump1:
 	
 	ldr		r2, =$080a7678
 	ldr		r2, [r2]
-	ldrh	r0, [r2, r0]
-	ldrh	r1, [r2, r1]
+	add		r0, r0, r2
+	add		r1, r1, r2
+	ldrh	r0, [r0, #0xB]
+	ldrh	r1, [r1, #0xB]
 	
 	ldr		r2, =$000003FF
 	and		r0, r2

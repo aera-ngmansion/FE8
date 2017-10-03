@@ -7,7 +7,14 @@
 	ldr		r1, [r0, #0]	;メモリ先頭4バイトのユニットデータのベースアドレス
 	ldrb	r0, [r2, #4]	;Unit ID
 	ldrb	r1, [r1, #4]	;Unit ID
-	
+	cmp		r0, #0x45
+	ble		jump0
+	mov		r0, #0
+jump0:
+	cmp		r1, #0x45
+	ble		jump1
+	mov		r1, #0
+jump1:
 	lsl		r0, r0, #4
 	lsl		r1, r1, #4
 	

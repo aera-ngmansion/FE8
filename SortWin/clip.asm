@@ -4,9 +4,10 @@
 
 	ldr		r3, [r4, #0]
 	ldr		r0, [r3, #0]
-	ldr		r1, [r0, #0]	;メモリ先頭4バイトのユニットデータのベースアドレス
-	ldrb	r0, [r2, #4]	;Unit ID
-	ldrb	r1, [r1, #4]	;Unit ID
+	ldr		r0, [r0, #0]	;メモリ先頭4バイトのユニットデータのベースアドレス
+	ldrb	r0, [r0, #4]	;Unit ID
+	ldrb	r1, [r2, #4]	;Unit ID
+	
 	cmp		r0, #0x45
 	ble		jump0
 	mov		r0, #0

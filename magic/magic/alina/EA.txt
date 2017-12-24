@@ -18,6 +18,14 @@ POIN	magic_alina_loadPowerOther
 ORG	0x31960
  #incbin calcAbility.gba
 
+//幸運強化＞魔力強化
+ORG 0x031d5e
+SHORT $7e8a
+SHORT $201a
+ORG 0x031dd6
+SHORT $7e8a
+SHORT $201a
+
 POP
 
 magic_alina_isMagic:

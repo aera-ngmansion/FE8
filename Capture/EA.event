@@ -59,11 +59,6 @@ Capture_Usability:
 	POIN	StealMinusFunc|1
 StealMinusFunc:
 	#incbin "StealMinusFunc.gba"
-	
-	ALIGN 4
-Capture_Effect_Func:
-	#incbin "Capture_Effect_Func.gba"
-
 
 PUSH
 	ORG $16328

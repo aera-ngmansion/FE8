@@ -69,57 +69,48 @@ PUSH
 	ORG $16328
 	WORD	$46874800
 	POIN	Soubi_non
-POP
-	ALIGN 4
-	Soubi_non:
-	#incbin "Soubi_non.gba"
-
 	
-PUSH
 	ORG $22840
 	WORD	$469F4B00
 	POIN	Cancel_Capture
-POP
-	ALIGN 4
-	Cancel_Capture:
-	#incbin "Cancel_Capture.gba"
 	
-	
-PUSH
 	ORG $3283c
 	WORD	$469F4B00
 	POIN	After_Battle_Rescue
-POP
-	ALIGN 4
-	After_Battle_Rescue:
-	#incbin "After_Battle_Rescue.gba"
-	POIN Is_Capture_Set
 	
-	
-PUSH
 	ORG $869b0
 	WORD	$468F4900
 	POIN	STOP_DEAD_WORD
-POP
-	ALIGN 4
-	STOP_DEAD_WORD:
-	#incbin "stop.gba"
 	
-PUSH
 	ORG $25130	//敵選択
-	
 //	SHORT $480b $6800 $7ac0 $0600
-	
-	
 	WORD	$46874800
 	POIN	EnemyCaptureCheck
+	
 POP
-	ALIGN 4
+    ALIGN 4
+    Soubi_non:
+    #incbin "Soubi_non.gba"
+
+    ALIGN 4
+    Cancel_Capture:
+    #incbin "Cancel_Capture.gba"
+	
+    ALIGN 4
+    After_Battle_Rescue:
+    #incbin "After_Battle_Rescue.gba"
+    POIN Is_Capture_Set
+	
+    ALIGN 4
+    STOP_DEAD_WORD:
+    #incbin "stop.gba"
+
+    ALIGN 4
 EnemyCaptureCheck:
-	#incbin "EmemyCheck.gba"
-	
-	
-	
+    #incbin "EmemyCheck.gba"
+
+	ALIGN 4
 Capture_Effect_Func:
-	#incbin "Capture_Effect_Func.gba"
+    #incbin "Capture_Effect_Func.gba"
 	
+ALIGN 4

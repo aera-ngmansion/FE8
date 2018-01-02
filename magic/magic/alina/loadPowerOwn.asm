@@ -1,5 +1,5 @@
 @thumb
-	mov	r1, #19
+	mov	r1, #0x13
 	ldsb	r1, [r4, r1]	;自分の物魔読み込み
 	cmp	r1, #0
 	beq	buturi

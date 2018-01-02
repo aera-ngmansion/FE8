@@ -1,10 +1,5 @@
 #define MAGIC_PATCH
 
-#ifdef SKILL_PATCH
-    #undef EQUIPMENT_POSITION
-    #define EQUIPMENT_POSITION $02003AAC
-#endif
-
 #include "Attribute\EA.txt"
 
 //力を下へ
@@ -17,7 +12,8 @@ WORD $02003DEE
 
 ORG	0xA741A8
  #incext Png2Dmp Equipment8.png --lz77
-
+ORG 0x089350 //Ability文字位置
+    WORD $02003AAC
 
 /* ヘルプ
 

@@ -1,3 +1,9 @@
+#define MAGIC_PATCH
+
+#ifdef SKILL_PATCH
+    #undef EQUIPMENT_POSITION
+    #define EQUIPMENT_POSITION $02003AAC
+#endif
 
 #include "Attribute\EA.txt"
 
@@ -60,16 +66,6 @@ PUSH
 /////////////ステータス1常に力
 ORG	0x89434
 SHORT	$E016
-
-ORG	0x89268
-BYTE	$00 $4B $9F $46
-POIN Skills_IconMG
-POP
-Skills_IconMG:
-#incbin "iconMG.gba"
-POIN	SIcon_U SIcon_C SIcon_W SIcon_S SIcon_A SIcon_M
-
-PUSH
 
 //ズラし
 ORG	0x894e8//技

@@ -27,5 +27,7 @@ scroll_check:
 ALIGN 4
 s_scroll:
  #incbin "store.gba"
+ WORD $081D //
+ WORD $081E //
 ALIGN 4
 

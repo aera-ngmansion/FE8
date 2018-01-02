@@ -18,10 +18,25 @@ manual:
     ldr r1, =$08017384 ;武器威力
     mov lr, r1
     @dcw $F800
-	
+    cmp r0, #255
+    bne not_eraser
+    ldr r1, =%1111000000000000
+    ldrh r2, [r4, #0x3A]
+    and r2, r1
+    strh r2, [r4, #0x3A]
+	mov	r0, r4
+        ldr r1, =$080186a8
+        mov lr, r1
+    mov r1, r7
+    @dcw $F800
+    @align 4
+    ldr r0, [adr+4] ;使用後の説明
+    ldr r1, =$0802f858
+    mov pc, r1
+    
+not_eraser:
     mov r1, %111111
     and r0, r1
-
 merge:
     ldrh r2, [r4, #0x3A]
     and r1, r2
@@ -57,7 +72,8 @@ return:
         mov lr, r1
     mov r1, r7
     @dcw $F800
-    ldr r0, =$081D
+    @align 4
+    ldr r0, [adr] ;使用後の説明
     ldr r1, =$0802f858
     mov pc, r1
 meti: ;メティスの書
@@ -69,3 +85,5 @@ meti: ;メティスの書
 	mov	r0, r4
 ldr	r1, =$0802f750
 mov pc, r1
+@ltorg
+adr:

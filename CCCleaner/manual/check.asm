@@ -30,6 +30,16 @@ goto:
     mov lr, r1
     @dcw $F800
 
+    cmp r0, #255
+    bne not_eraser
+;消滅処理
+    mov r2, %111111
+    ldrh r1, [r4, #0x3A]
+    and r1, r2
+    bne can_use ;何かあるから消せる
+    b cant_use
+    
+not_eraser:
     mov r2, %111111
     and r0, r2
     ldrh r1, [r4, #0x3A]

@@ -1,7 +1,8 @@
 @thumb
 		ldr	r0, =$080890bc
 		mov	lr, r0
-	ldr	r0, [mojimoji]
+	@align 4
+	ldr	r0, [adr]
 	@dcw	$F800	;=文字描写
 	ldr	r5, =$02003EB4	;=$02003f84
 	ldr	r4, =$02003bfc
@@ -63,8 +64,8 @@ backSTAR:
 	beq	two
 	cmp	r2, #1
 	beq	one
-miracleSTAR:
-	ldr	r0, =$02003f06
+miracleSTAR: ;6以上の★
+	ldr	r0, =$02003ec6
 	ldr	r1, =$08004a9c
 	mov	lr, r1
 	mov	r1, r5		;★数字の色
@@ -72,25 +73,30 @@ miracleSTAR:
 	blt	Hitoketa
 	add	r0, #0x2
 Hitoketa:
-	@dcw	$F800
-	mov	r2, #1
-	b	backSTAR:
-	
-	
+    @dcw $F800
+    mov r2, #1
+    b backSTAR
+    
+    
 one:
-	mov	r0, $74	;文字
+    @align 4
+    ldr r0, [adr+4] ;文字列ID
 	b	nextSTAR
 two:
-	mov	r0, $73	;文字
+    @align 4
+    ldr r0, [adr+8] ;文字列ID
 	b	nextSTAR
 three:
-	mov	r0, $72	;文字
+    @align 4
+    ldr r0, [adr+12] ;文字列ID
 	b	nextSTAR
 four:
-	mov	r0, $71	;文字
+    @align 4
+    ldr r0, [adr+16] ;文字列ID
 	b	nextSTAR
 five:
-	mov	r0, $70	;文字
+    @align 4
+    ldr r0, [adr+20] ;文字列ID
 nextSTAR:
 	@dcw	$F800
 	
@@ -108,7 +114,7 @@ nextSTAR:
 	
 jump:
 	mov	r2, #255
-	ldr	r0, =$02003f06
+	ldr	r0, =$02003ec6
 	ldr	r1, =$08004a9c
 	mov	lr, r1
 	mov	r1, r5		;数字の色
@@ -121,4 +127,4 @@ end:
 	pop	{r0}
 	bx	r0
 @ltorg
-mojimoji
+adr:

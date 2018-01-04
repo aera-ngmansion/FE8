@@ -17,7 +17,7 @@
     mov pc, r1
 jump:
     lsl r0, r0, #2
-    ldr r1, =$0802884e
+    ldr r1, =$08028850
     mov pc, r1
     
 ;メティス

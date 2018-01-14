@@ -1,3 +1,4 @@
+#include config.txt
 
 PUSH
 
@@ -27,7 +28,7 @@ scroll_check:
 ALIGN 4
 s_scroll:
  #incbin "store.gba"
- WORD $081D //
- WORD $081E //
+ WORD TEXT_ID_AFTER_USING_MANUAL
+ WORD TEXT_ID_AFTER_USING_ERASER
 ALIGN 4
 

@@ -4,25 +4,16 @@
     @dcw $b0ac ;sub sp, #176
     @dcw $b0ac ;sub sp, #176
     
-    ldr r1, =$0E004760 ;1
+    ldr r1, =$080a9bb5
+    mov r0, lr
     cmp r0, r1
-    beq one
-    ldr r1, =$0E005528 ;2
-    cmp r0, r1
-    beq two
-    ldr r1, =$0E005B54 ;3
-    cmp r0, r1
-    beq three
+    beq normal
     mov r0, #0
     b merge
-one:
-    mov r0, #1
-    b merge
-two:
-    mov r0, #2
-    b merge
-three:
-    mov r0, #3
+    
+normal:
+    mov r0, r9
+    add r0, #1
 merge:
     ldr r1, =0x160
     mul r0, r1

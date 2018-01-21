@@ -1,4 +1,4 @@
-#define TRANSPORTER_MAX 99
+#define TRANSPORTER_MAX $080B92C0
 
 //////////////統合システム
 PUSH

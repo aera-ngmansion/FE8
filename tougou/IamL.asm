@@ -80,14 +80,15 @@ zoushoku
 ;	ble	azukeloop
 ;	b	non
 loop
-	add	r5, #2
-	add	r3, #1
-	@align 4
-	ldr r0, [adr]
-	cmp	r3, r0
-	ble	loopstart
+    add r5, #2
+    add r3, #1
+    @align 4
+    ldr r0, [adr]
+    ldrb r0, [r0]
+    cmp r3, r0
+    ble loopstart
 non
-	strh	r4, [r6, #46]	;????
+    strh r4, [r6, #46]	;????
 ;	mov	r0, #1
 ;	neg	r0, r0	
 end

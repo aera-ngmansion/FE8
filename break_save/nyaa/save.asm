@@ -10,7 +10,15 @@
     ldr r1, =$080a9abd
     cmp r0, r1
     beq normal
+    ldr r1, =$080a99c9
+    cmp r0, r1
+    beq start
+    
     mov r0, #0
+    b merge
+start:
+    mov r0, r9
+    add r0, #1
     b merge
 normal:
     mov r0, r10

@@ -2,7 +2,9 @@
 #include "nyaa\EA.txt"
 
 PUSH
-
+//HP上限
+ORG 0x02be91
+    BYTE $D8
 //幸運上限
 ORG 0x02bf5e 
     BYTE STATUS_MAX

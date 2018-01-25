@@ -1,8 +1,7 @@
 @thumb
 		ldr	r0, =$080890bc
 		mov	lr, r0
-	@align 4
-	ldr	r0, [adr]
+	ldr	r0, [mojimoji]
 	@dcw	$F800	;=文字描写
 	ldr	r5, =$02003EB4	;=$02003f84
 	ldr	r4, =$02003bfc
@@ -38,18 +37,22 @@
 	mov	r10, r5
 	
 ;指揮
-    ldr r0, =$02003ec6;;;;;;;;;数字位置
-        @align 4
-        ldr r1, =$0802A96C
-        ldr r1, [r1]
-        mov lr, r1
-        @dcw $F800
-    b end
-
-end:
+	ldr	r2, [r4, #12]
+	ldr	r2, [r2]
+	mov	r1, #0x25
+	ldrb	r2, [r2, r1]
+	cmp	r2, #0
+	bne	jumpShiki
+	mov	r2, #255
+jumpShiki:
+	ldr	r1, =$08004a9c
+	mov	lr, r1
+	ldr	r0, =$02003EC6
+	mov	r1, #2
+	@dcw	$F800
 	
 	pop	{r4, r5, r6, r7}
 	pop	{r0}
 	bx	r0
 @ltorg
-adr:
+mojimoji

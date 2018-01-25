@@ -1,15 +1,6 @@
 //Newステ3
 
 
-
-#define ONE_STAR_ID $074
-#define TWO_STARS_ID $073
-#define THREE_STARS_ID $072
-#define FOUR_STARS_ID $071
-#define FIVE_STARS_ID $070
-word_zokusei:
-WORD $480	//属性のID
-
 PUSH
 //ヘルプここから
 ORG	0xA72FFC
@@ -55,20 +46,14 @@ POP
 clear_Remagic:
 #incbin "get.gba"
 POIN	mojimo_Remagic
-WORD ONE_STAR_ID
-WORD TWO_STARS_ID
-WORD THREE_STARS_ID
-WORD FOUR_STARS_ID
-WORD FIVE_STARS_ID
-
-
 mojimo_Remagic:
 WORD	$02003C7C $02003EAE $3	// $080DD3E0	//属性
 POIN	word_zokusei
 WORD	$02003CEC $02003EBE $3 $087A9054	//指揮
 WORD 0 0
 
-
+word_zokusei:
+WORD $480	//属性のID
 
 Shiki3_Help:
 WORD $08A72FFC $08A7306C

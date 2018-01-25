@@ -1,0 +1,13 @@
+PUSH
+
+  #ifndef Debug_Mode
+  ORG	0xbae26
+    SHORT $E00C
+  ORG	0x1719c
+    SHORT $46C0
+  ORG	0x31244
+    WORD $0631E000
+  #endif
+
+POP
+

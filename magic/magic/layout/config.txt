@@ -1,5 +1,5 @@
 word_id_skill:
-WORD $78 //"Ｓｋｉｌｌ"の文字ID
+WORD $78 //"Ｓｋｉｌｌｓ"の文字ID
 
 word_id_zokusei:
 WORD $480 //"属性"の文字ID

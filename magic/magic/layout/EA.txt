@@ -7,7 +7,7 @@
 PUSH
 
 ORG 0x8949c
-BYTE	$3
+BYTE $3
 ORG 0x89670
 WORD $02003DEE
 
@@ -90,11 +90,15 @@ BYTE	$D
 ORG	0x89592
 BYTE	$7
 
-//矢印右上に移動
+//技下降矢印右上に移動
 ORG	0x8a64c
 BYTE	$B8
 ORG	0x8a64e
 BYTE	$18
+//速さ下降矢印下に移動
+ORG 0x08a658
+BYTE $48
+
 //救出マーク下半
 ORG	0x8a684
 BYTE	$66

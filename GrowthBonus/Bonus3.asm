@@ -44,7 +44,7 @@ loopin_b
     ldrb r0, [r5, r4]
     add r0, r10
 
-    mov r2, #3
+    mov r2, #7
     sub r2, r2, r4
     lsl r2, r2, #3
     

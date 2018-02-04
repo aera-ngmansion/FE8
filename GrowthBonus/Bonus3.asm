@@ -71,7 +71,7 @@ zeroB
     beq nonmag
     add r0, r10
     mov r1, r9
-    asr r1, r1, #28
+    asr r1, r1, #24
     add r0, r0, r1
     cmp r0, #0
     bge zeroC

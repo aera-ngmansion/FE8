@@ -2,7 +2,7 @@
 	
 	mov	r0, #20
 	ldsb	r0, [r2, r0]
-	@dcw	$4664
+	@dcw	$4664	;mov r4, ip
 	add	r4, #116
 	mov	r1, #0
 	ldsb	r1, [r4, r1]
@@ -20,7 +20,7 @@
 next
 	mov	r0, #26
 	ldsb	r0, [r2, r0]
-	@dcw	$4664
+	@dcw	$4664	;mov r4, ip
 	add	r4, #122
 	mov	r1, #0
 	ldsb	r1, [r4, r1]
@@ -36,5 +36,5 @@ next
 	sub	r0, r0, r1
 	strb	r0, [r4, #0]
 end
-	ldr	r0, =$0802bef6
+	ldr	r0, =$0802bed8
 	mov	pc, r0

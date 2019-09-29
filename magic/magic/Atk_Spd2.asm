@@ -27,7 +27,7 @@ none
 	asr	r2, r2, #24
 	add	r0, r0, r2	;r0に合計体格
 	
-	ldrb	r2, [r4, #21]	;技
+	ldrb	r2, [r4, #20]	;力
 	lsr	r2, r2, #2
 	add	r0, r0, r2
 	

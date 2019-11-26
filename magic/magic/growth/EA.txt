@@ -19,7 +19,7 @@ WORD	$46974A00
 POIN	clazon
 
 ORG	0x017dd4	//敵補正
-BYTE $00 $49 $8F $46
+WORD	$46874800
 POIN boost_enemy
 
 

@@ -18,6 +18,11 @@ ORG	0x17d74	//クラス成長読み
 WORD	$46974A00
 POIN	clazon
 
+ORG	0x017dd4	//敵補正
+BYTE $00 $49 $8F $46
+POIN boost_enemy
+
+
 //クラスチェンジ
 
 ORG	0x2bd44
@@ -35,6 +40,9 @@ ORG	0x17f82
 
 POP
 
+boost_enemy:
+ #incbin "boost.dmp"
+ALIGN 4
 maxa:
  #incbin "maxa.gba"
 ALIGN 4

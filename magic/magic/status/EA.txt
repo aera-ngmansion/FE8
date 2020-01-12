@@ -2,11 +2,11 @@
 PUSH
 ORG	0x18ec4
 WORD	$468F4900
-POIN	strong
+POIN	magic_strong
 
 ORG	0x18ecc
 WORD	$468F4900
-POIN	magicn
+POIN	StatusUpConstitution
 
 //被救出値
 ORG	0x1804a
@@ -23,8 +23,15 @@ ORG	0x34992	//救出前表示
 SHORT	$2000
 
 POP
-strong:
-	#incbin "strong.gba"
+magic_strong:
+#incbin "..\..\_N\StatusUp\StatusUp.dmp"
+POIN magicn_end	//戻りアドレス
+POIN StrengthWp
+POIN SwordfaireFunc
+POIN LancefaireFunc
+POIN AxefaireFunc
+POIN BowfaireFunc
+POIN 0	//末尾判定用
 
-magicn:
-	#incbin "magicn.gba"
+magicn_end:
+	#incbin "strong.gba"

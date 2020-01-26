@@ -1,10 +1,12 @@
 @thumb
-@org	$0802aae4
+;@org	$0802aae4
 	push	{r4, lr}
 	mov	r4, r0
 	add	r0, #74
 	ldrh	r0, [r0, #0]
-	bl	$080173b4	;r0に武器の重さ
+		ldr	r1, =$080173b4
+		mov	lr, r1
+		@dcw	$F800
 	mov	r1, r0
 	
 	ldr	r0, [r4, #4]

@@ -39,7 +39,7 @@ ORG	0x17f82
 #incbin "max.gba"
 
 POP
-
+ALIGN 4
 boost_enemy:
  #incbin "boost.dmp"
 ALIGN 4

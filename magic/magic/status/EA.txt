@@ -27,6 +27,7 @@ magic_strong:
 #incbin "..\..\_N\StatusUp\StatusUp.dmp"
 POIN magicn_end	//戻りアドレス
 POIN StrengthWp
+POIN StatusUpSkillStrengthFunc
 POIN SwordfaireFunc
 POIN LancefaireFunc
 POIN AxefaireFunc
